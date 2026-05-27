@@ -7,12 +7,12 @@ import java.sql.SQLException;
 
 public class ConnectionManager {
 
-    private static final String STR_CONNECTION = "jdbc:sqlserver://RecursosMaterialesDB.mssql.somee.com; " +
-            "encrypt=true; " +
-            "database=RecursosMaterialesDB; " +
-            "trustServerCertificate=true;" +
+    private static final String STR_CONNECTION = "jdbc:sqlserver://RecursosMaterialesDB.mssql.somee.com;" +
+            "databaseName=RecursosMaterialesDB;" +
             "user=Monica18_SQLLogin_1;" +
-            "password=m18wd7csls";
+            "password=m18wd7csls;" +
+            "encrypt=true;" +
+            "trustServerCertificate=true;";
 
 
     private Connection connection;

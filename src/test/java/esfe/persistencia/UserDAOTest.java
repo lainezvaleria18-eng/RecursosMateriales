@@ -37,8 +37,8 @@ class UserDAOTest {
 
         user.setNombre(user.getNombre() + " Modificado");
         user.setCorreo("u" + user.getCorreo());
-        user.setEstado((byte)1); // Establece el estado a 1 (Activo).
-        user.setUltimaModificacionPor("Admin"); // Nombre de auditoría genérico
+        user.setEstado((byte)1);
+        user.setUltimaModificacionPor("Admin");
 
 
         boolean res = userDAO.update(user);
@@ -51,7 +51,7 @@ class UserDAOTest {
     }
 
     private void getById(User user) throws SQLException {
-        // Llama al método 'getById' usando tu llave primaria 'idUsuario'
+
         User res = userDAO.getById(user.getIdUsuario());
 
 
@@ -162,7 +162,7 @@ class UserDAOTest {
         Random random = new Random();
         int num = random.nextInt(5000) + 1;
 
-        // Prueba de inserción rápida basada en tu ejemplo de 'Juan Pérez'
+
         User user = new User(0, "2023" + num, "Juan Pérez", "juan.perez" + num + "@empresa.com", "jperez" + num,
                 "12345", 2, "user.png", (byte) 1,
                 null, null, null);
