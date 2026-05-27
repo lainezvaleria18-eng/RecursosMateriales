@@ -1,0 +1,179 @@
+CREATE DATABASE RecursosMaterialesDB;
+GO
+USE RecursosMaterialesDB;
+GO
+
+CREATE TABLE Roles (
+    IdRol INT IDENTITY(1,1),
+    NombreRol NVARCHAR(50) NOT NULL,
+    CONSTRAINT PK_Roles PRIMARY KEY (IdRol)
+);
+
+CREATE TABLE TiposConsumidores (
+    IdTipoConsumidor INT IDENTITY(1,1),
+    NombreEspecialidad NVARCHAR(100) NOT NULL,
+    CONSTRAINT PK_TiposConsumidores PRIMARY KEY (IdTipoConsumidor)
+);
+
+CREATE TABLE CategoriasMateriales (
+    IdCategoria INT IDENTITY(1,1),
+    NombreCategoria NVARCHAR(100) NOT NULL,
+    Descripcion NVARCHAR(200),
+    CONSTRAINT PK_CategoriasMateriales PRIMARY KEY (IdCategoria)
+);
+
+CREATE TABLE TiposRecursos (
+    IdTipoRecurso INT IDENTITY(1,1),
+    NombreTipo NVARCHAR(50) NOT NULL, 
+    Descripcion NVARCHAR(150),
+    CONSTRAINT PK_TiposRecursos PRIMARY KEY (IdTipoRecurso)
+);
+
+CREATE TABLE EstadosRecursos (
+    IdEstadoRecurso INT IDENTITY(1,1),
+    NombreEstado NVARCHAR(50) NOT NULL, 
+    CONSTRAINT PK_EstadosRecursos PRIMARY KEY (IdEstadoRecurso)
+);
+
+CREATE TABLE TiposMovimientos (
+    IdTipoMovimiento INT IDENTITY(1,1),
+    NombreTipo NVARCHAR(50) NOT NULL, 
+    CONSTRAINT PK_TiposMovimientos PRIMARY KEY (IdTipoMovimiento)
+);
+
+CREATE TABLE Usuarios (
+    IdUsuario INT IDENTITY(1,1),
+    Carnet NVARCHAR(20) UNIQUE NOT NULL,
+    Nombre NVARCHAR(100) NOT NULL,
+    Correo NVARCHAR(100) UNIQUE NOT NULL,
+    Usuario NVARCHAR(50) UNIQUE NOT NULL,
+    Clave NVARCHAR(255) NOT NULL,
+    IdRol INT NOT NULL,
+    FotoPerfil NVARCHAR(255) NULL, 
+    Estado BIT DEFAULT 1,
+    FechaCreacion DATETIME DEFAULT GETDATE(),
+    UltimaModificacionPor NVARCHAR(100) NULL,
+    FechaUltimaModificacion DATETIME NULL,
+    CONSTRAINT PK_Usuarios PRIMARY KEY (IdUsuario),
+    CONSTRAINT FK_Usuarios_Roles FOREIGN KEY (IdRol) REFERENCES Roles (IdRol)
+);
+
+CREATE TABLE RecuperacionesPassword (
+    IdRecuperacion INT IDENTITY(1,1),
+    IdUsuario INT NOT NULL,
+    CodigoRecuperacion NVARCHAR(20) NOT NULL,
+    FechaSolicitud DATETIME DEFAULT GETDATE(),
+    FechaExpiracion DATETIME,
+    Usado BIT DEFAULT 0,
+    CONSTRAINT PK_RecuperacionesPassword PRIMARY KEY (IdRecuperacion),
+    CONSTRAINT FK_Recuperaciones_Usuarios FOREIGN KEY (IdUsuario) REFERENCES Usuarios (IdUsuario)
+);
+
+CREATE TABLE Recursos (
+    IdRecurso INT IDENTITY(1,1),
+    CodigoRecurso NVARCHAR(50) UNIQUE NOT NULL,
+    NombreRecurso NVARCHAR(150) NOT NULL,
+    Marca NVARCHAR(100) NOT NULL,
+    Modelo NVARCHAR(100) NOT NULL,
+    NumeroSerie NVARCHAR(100) NOT NULL,
+    Ubicacion NVARCHAR(100) DEFAULT 'Bodega Central',
+    UnidadMedida NVARCHAR(50) DEFAULT 'Unidad',
+    Stock INT DEFAULT 0,
+    Precio DECIMAL(10,2),
+    Descripcion NVARCHAR(250),
+    IdCategoria INT,
+    IdTipoRecurso INT NOT NULL,       
+    IdEstadoRecurso INT DEFAULT 1,
+    CONSTRAINT PK_Recursos PRIMARY KEY (IdRecurso),
+    CONSTRAINT FK_Recursos_Categorias FOREIGN KEY (IdCategoria) REFERENCES CategoriasMateriales (IdCategoria),
+    CONSTRAINT FK_Recursos_TiposRecursos FOREIGN KEY (IdTipoRecurso) REFERENCES TiposRecursos (IdTipoRecurso),
+    CONSTRAINT FK_Recursos_Estados FOREIGN KEY (IdEstadoRecurso) REFERENCES EstadosRecursos (IdEstadoRecurso)
+);
+
+CREATE TABLE Prestamos (
+    IdPrestamo INT IDENTITY(1,1),
+    FechaSolicitud DATETIME DEFAULT GETDATE(),
+    FechaDevolucion DATE NULL,
+    Estado NVARCHAR(50) DEFAULT 'Pendiente',
+    Observaciones NVARCHAR(250),
+    IdUsuario INT,               
+    IdTipoConsumidor INT,        
+    CONSTRAINT PK_Prestamos PRIMARY KEY (IdPrestamo),
+    CONSTRAINT FK_Prestamos_Usuarios FOREIGN KEY (IdUsuario) REFERENCES Usuarios (IdUsuario),
+    CONSTRAINT FK_Prestamos_TiposConsumidores FOREIGN KEY (IdTipoConsumidor) REFERENCES TiposConsumidores (IdTipoConsumidor)
+);
+
+CREATE TABLE DetallesPrestamos (
+    IdDetalle INT IDENTITY(1,1),
+    IdPrestamo INT,
+    IdRecurso INT,
+    Cantidad INT NOT NULL,
+    CONSTRAINT PK_DetallesPrestamos PRIMARY KEY (IdDetalle),
+    CONSTRAINT FK_Detalles_Prestamos FOREIGN KEY (IdPrestamo) REFERENCES Prestamos (IdPrestamo),
+    CONSTRAINT FK_Detalles_Recursos FOREIGN KEY (IdRecurso) REFERENCES Recursos (IdRecurso)
+);
+
+CREATE TABLE Mantenimientos (
+    IdMantenimiento INT IDENTITY(1,1),
+    IdRecurso INT NOT NULL,
+    Fecha DATETIME DEFAULT GETDATE(),
+    Tecnico NVARCHAR(100) NOT NULL,
+    Observacion NVARCHAR(250),
+    EstadoMantenimiento NVARCHAR(50) DEFAULT 'Terminado',
+    CONSTRAINT PK_Mantenimientos PRIMARY KEY (IdMantenimiento),
+    CONSTRAINT FK_Mantenimientos_Recursos FOREIGN KEY (IdRecurso) REFERENCES Recursos (IdRecurso)
+);
+
+CREATE TABLE MovimientosInventario (
+    IdMovimiento INT IDENTITY(1,1),
+    IdTipoMovimiento INT,
+    Cantidad INT,
+    FechaMovimiento DATETIME DEFAULT GETDATE(),
+    Observacion NVARCHAR(250),
+    IdRecurso INT,
+    IdUsuario INT,
+    CONSTRAINT PK_MovimientosInventario PRIMARY KEY (IdMovimiento),
+    CONSTRAINT FK_Movimientos_Tipos FOREIGN KEY (IdTipoMovimiento) REFERENCES TiposMovimientos (IdTipoMovimiento),
+    CONSTRAINT FK_Movimientos_Recursos FOREIGN KEY (IdRecurso) REFERENCES Recursos (IdRecurso),
+    CONSTRAINT FK_Movimientos_Usuarios FOREIGN KEY (IdUsuario) REFERENCES Usuarios (IdUsuario)
+);
+
+CREATE TABLE Notificaciones (
+    IdNotificacion INT IDENTITY(1,1),
+    Mensaje NVARCHAR(250) NOT NULL,
+    Fecha DATETIME DEFAULT GETDATE(),
+    Leida BIT DEFAULT 0,
+    IdUsuario INT,
+    CONSTRAINT PK_Notificaciones PRIMARY KEY (IdNotificacion),
+    CONSTRAINT FK_Notificaciones_Usuarios FOREIGN KEY (IdUsuario) REFERENCES Usuarios (IdUsuario)
+);
+GO
+
+
+INSERT INTO Roles (NombreRol) VALUES ('Administrador'), ('Solicitante');
+INSERT INTO TiposConsumidores (NombreEspecialidad) VALUES ('Ingeniería en Sistemas'), ('Área Administrativa');
+INSERT INTO CategoriasMateriales (NombreCategoria, Descripcion) VALUES ('Laptops', 'Portátiles'), ('Consumibles TI', 'Tóners y tintas');
+INSERT INTO EstadosRecursos (NombreEstado) VALUES ('Disponible'), ('Prestado'), ('Agotado');
+
+INSERT INTO TiposRecursos (NombreTipo, Descripcion) VALUES 
+('Prestamo', 'Materiales que se prestan y deben ser devueltos'),
+('Consumible', 'Materiales de una sola entrega que se gastan');
+
+INSERT INTO TiposMovimientos (NombreTipo) VALUES ('Entrada Inicial');
+
+INSERT INTO Usuarios (Nombre, Correo, Usuario, Clave, IdRol, Carnet, UltimaModificacionPor, FechaUltimaModificacion) VALUES
+('Carlos Martínez', 'carlos@empresa.com', 'admin', '12345', 1, 'ADM-001', NULL, NULL),
+('Juan Pérez', 'juan.perez@empresa.com', 'jperez', '12345', 2, '20230125', 'Admin', '2026-05-20');
+
+INSERT INTO Recursos (CodigoRecurso, NombreRecurso, Marca, Modelo, NumeroSerie, Stock, Precio, IdCategoria, IdTipoRecurso, IdEstadoRecurso) VALUES
+('LAP-001', 'Laptop Dell Latitude', 'Dell', 'Latitude 5520', 'MX12345678', 5, 850.00, 1, 1, 1),
+('TON-085', 'Tóner HP 85A', 'HP', 'CE285A', 'SN-HP85A', 12, 65.00, 2, 2, 1);                 
+INSERT INTO Prestamos (FechaSolicitud, FechaDevolucion, Estado, Observaciones, IdUsuario, IdTipoConsumidor) VALUES
+('2026-05-15', '2026-05-22', 'Devuelto', 'Préstamo de Laptop para clases', 2, 1);
+
+INSERT INTO DetallesPrestamos (IdPrestamo, IdRecurso, Cantidad) VALUES (1, 1, 1);
+
+INSERT INTO Notificaciones (Mensaje, IdUsuario) VALUES ('Base de datos inicializada correctamente', 1);
+GO
+
+
