@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3bbf39d-08d7-486c-8c55-69e65b1b931f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/dominio/Notificaciones.java" afterDir="false" />
+    <list default="true" id="c5b10fe8-b7a0-460f-aae2-a8bbcc461807" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/esfe/persistencia/RecursosDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/esfe/persistencia/RecursosDAOTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,20 +44,15 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Application.PrestamoDAOTest.executor&quot;: &quot;Run&quot;,
     &quot;Application.RecursosDAOTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.EstadosRecursosDAOTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.EstadosRecursosDAOTest.insertar.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.EstadosRecursosDAOTest.obtenerTodos.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MantenimientoDAOTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MovimientoInventarioDAOTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.PrestamoDAOTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.RecuperacionPasswordDAOTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.RecursosDAOTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.RecursosDAOTest.guardar.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.RecursosDAOTest.obtenerTodos.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RolDAOTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TipoConsumidorDAOTest.executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
@@ -66,7 +61,7 @@
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Daniela&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/MINEDUCYT/Downloads/recursos materiales&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -77,7 +72,6 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -92,8 +86,8 @@
       <recent name="esfe.persistencia" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DetallePrestamoDAOTest">
-    <configuration name="DetallePrestamoDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.EstadosRecursosDAOTest.obtenerTodos">
+    <configuration name="EstadosRecursosDAOTest.insertar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RecursosMateriales" />
       <extension name="coverage">
         <pattern>
@@ -181,11 +175,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DetallePrestamoDAOTest" />
-        <item itemvalue="JUnit.PrestamoDAOTest" />
-        <item itemvalue="JUnit.NotificacionesDAOTest" />
-        <item itemvalue="JUnit.MantenimientoDAOTest" />
-        <item itemvalue="JUnit.MovimientoInventarioDAOTest" />
+        <item itemvalue="JUnit.EstadosRecursosDAOTest.obtenerTodos" />
+        <item itemvalue="JUnit.EstadosRecursosDAOTest.insertar" />
+        <item itemvalue="JUnit.RecursosDAOTest.obtenerTodos" />
+        <item itemvalue="JUnit.RecursosDAOTest.guardar" />
+        <item itemvalue="JUnit.RecursosDAOTest" />
       </list>
     </recent_temporary>
   </component>
@@ -206,15 +200,24 @@
       <updated>1780032328175</updated>
       <workItem from="1780032329646" duration="5218000" />
       <workItem from="1780078419373" duration="1014000" />
-      <workItem from="1780079508378" duration="9855000" />
-      <workItem from="1780102512300" duration="3073000" />
-      <workItem from="1780111892437" duration="1813000" />
-      <workItem from="1780117159473" duration="833000" />
-      <workItem from="1780118003886" duration="1783000" />
+      <workItem from="1780079508378" duration="20085000" />
+      <workItem from="1780124132505" duration="1990000" />
+      <workItem from="1780154771106" duration="18000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/esfe/persistencia/RecursosDAOTest.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
