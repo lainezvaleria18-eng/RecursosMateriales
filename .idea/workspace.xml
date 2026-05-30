@@ -4,12 +4,6 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5b10fe8-b7a0-460f-aae2-a8bbcc461807" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/esfe/persistencia/CategoriaMaterialDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/esfe/persistencia/CategoriaMaterialDAOTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/esfe/persistencia/RolDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/esfe/persistencia/RolDAOTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/esfe/persistencia/TipoConsumidorDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/esfe/persistencia/TipoConsumidorDAOTest.java" afterDir="false" />
-    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,6 +45,7 @@
     "JUnit.RecuperacionPasswordDAOTest.executor": "Run",
     "JUnit.RecursosDAOTest.executor": "Run",
     "JUnit.RecursosDAOTest.guardar.executor": "Run",
+    "JUnit.RecursosDAOTest.obtenerTodos.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -81,9 +76,8 @@
       <recent name="esfe.persistencia" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RecursosDAOTest.guardar">
-    <configuration name="RecursosDAOTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="esfe.persistencia.RecursosDAOTest" />
+  <component name="RunManager" selected="JUnit.EstadosRecursosDAOTest.insertar">
+    <configuration name="EstadosRecursosDAOTest.insertar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RecursosMateriales" />
       <extension name="coverage">
         <pattern>
@@ -91,6 +85,10 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="esfe.persistencia" />
+      <option name="MAIN_CLASS_NAME" value="esfe.persistencia.EstadosRecursosDAOTest" />
+      <option name="METHOD_NAME" value="insertar" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -171,11 +169,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.EstadosRecursosDAOTest.insertar" />
         <item itemvalue="JUnit.RecursosDAOTest.guardar" />
         <item itemvalue="JUnit.RecursosDAOTest.obtenerTodos" />
         <item itemvalue="JUnit.RecursosDAOTest" />
         <item itemvalue="JUnit.EstadosRecursosDAOTest.obtenerTodos" />
-        <item itemvalue="Application.RecursosDAOTest" />
       </list>
     </recent_temporary>
   </component>
@@ -188,7 +186,7 @@
       <updated>1780032328175</updated>
       <workItem from="1780032329646" duration="5218000" />
       <workItem from="1780078419373" duration="1014000" />
-      <workItem from="1780079508378" duration="9519000" />
+      <workItem from="1780079508378" duration="9855000" />
     </task>
     <servers />
   </component>
