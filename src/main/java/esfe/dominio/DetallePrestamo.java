@@ -1,34 +1,74 @@
 package esfe.dominio;
 
 public class DetallePrestamo {
-    private int idDetallePrestamo;
-    private int idPrestamo;
-    private int idConsumible;
-    private int cantidad;
-    private String observaciones;
+    private Long id;
+    private Long prestamoId; // Llave foránea que conecta con el préstamo principal
+    private Integer numeroCuota;
+    private Double montoCuota;
+    private Boolean pagado;
 
-    public DetallePrestamo() {}
-
-    public DetallePrestamo(int idDetallePrestamo, int idPrestamo, int idConsumible, int cantidad, String observaciones) {
-        this.idDetallePrestamo = idDetallePrestamo;
-        this.idPrestamo = idPrestamo;
-        this.idConsumible = idConsumible;
-        this.cantidad = cantidad;
-        this.observaciones = observaciones;
+    // Constructor vacío
+    public DetallePrestamo() {
     }
 
-    public int getIdDetallePrestamo() { return idDetallePrestamo; }
-    public void setIdDetallePrestamo(int idDetallePrestamo) { this.idDetallePrestamo = idDetallePrestamo; }
+    // Constructor completo
+    public DetallePrestamo(Long id, Long prestamoId, Integer numeroCuota, Double montoCuota, Boolean pagado) {
+        this.id = id;
+        this.prestamoId = prestamoId;
+        this.numeroCuota = numeroCuota;
+        this.montoCuota = montoCuota;
+        this.pagado = pagado;
+    }
 
-    public int getIdPrestamo() { return idPrestamo; }
-    public void setIdPrestamo(int idPrestamo) { this.idPrestamo = idPrestamo; }
+    // Getters y Setters
+    public Long getId() {
+        return id;
+    }
 
-    public int getIdConsumible() { return idConsumible; }
-    public void setIdConsumible(int idConsumible) { this.idConsumible = idConsumible; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    public int getCantidad() { return cantidad; }
-    public void setCantidad(int cantidad) { this.cantidad = cantidad; }
+    public Long getPrestamoId() {
+        return prestamoId;
+    }
 
-    public String getObservaciones() { return observaciones; }
-    public void setObservaciones(String observaciones) { this.observaciones = observaciones; }
+    public void setPrestamoId(Long prestamoId) {
+        this.prestamoId = prestamoId;
+    }
+
+    public Integer getNumeroCuota() {
+        return numeroCuota;
+    }
+
+    public void setNumeroCuota(Integer numeroCuota) {
+        this.numeroCuota = numeroCuota;
+    }
+
+    public Double getMontoCuota() {
+        return montoCuota;
+    }
+
+    public void setMontoCuota(Double montoCuota) {
+        this.montoCuota = montoCuota;
+    }
+
+    public Boolean getPagado() {
+        return pagado;
+    }
+
+    public void setPagado(Boolean pagado) {
+        this.pagado = pagado;
+    }
+
+    @Override
+    public String toString() {
+        return "DetallePrestamo{" +
+                "id=" + id +
+                ", prestamoId=" + prestamoId +
+                ", numeroCuota=" + numeroCuota +
+                ", montoCuota=" + montoCuota +
+                ", pagado=" + pagado +
+                '}';
+    }
 }

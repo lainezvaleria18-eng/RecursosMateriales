@@ -1,70 +1,78 @@
 package esfe.persistencia;
 
+import esfe.dominio.Prestamo; // Importación obligatoria del dominio
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import esfe.dominio.Prestamo;
+import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PrestamoDAO {
-    private ConnectionManager conn;
-    private PreparedStatement ps;
-    private ResultSet rs;
+    private final Connection connection;
 
-    public PrestamoDAO() {
-        conn = ConnectionManager.getInstance();
+    public PrestamoDAO(Connection connection) {
+        this.connection = connection;
     }
 
-    public boolean create(Prestamo prestamo) throws SQLException {
-        boolean res = false;
-        try {
-            ps = conn.connect().prepareStatement(
-                    "INSERT INTO Prestamos (IdUsuario, IdRecurso, FechaPrestamo, Estado) " +
-                            "VALUES (?, ?, GETDATE(), 'Activo')"
-            );
-            ps.setInt(1, prestamo.getIdUsuario());
-            ps.setInt(2, prestamo.getIdRecurso());
-
-            if (ps.executeUpdate() > 0) {
-                res = true;
-            }
-            if (ps != null) { ps.close(); }
-        } catch (SQLException ex) {
-            throw new SQLException("Error al registrar el préstamo: " + ex.getMessage(), ex);
-        } finally {
-            if (ps != null) {
-                try { ps.close(); } catch (SQLException e) {}
-            }
-            ps = null;
-            conn.disconnect();
+    // Guardar préstamo
+    public void guardar(Prestamo prestamo) throws SQLException {
+        String sql = "INSERT INTO prestamos (id, cliente, monto, fecha_inicio, activo) VALUES (?, ?, ?, ?, ?)";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setLong(1, prestamo.getId());
+            statement.setString(2, prestamo.getCliente());
+            statement.setDouble(3, prestamo.getMonto());
+            statement.setDate(4, Date.valueOf(prestamo.getFechaInicio()));
+            statement.setBoolean(5, prestamo.getActivo());
+            statement.executeUpdate();
         }
-        return res;
     }
 
-    public boolean buscarPrestamoActivo(int idUsuario, int idRecurso) throws SQLException {
-        boolean activo = false;
-        try {
-            ps = conn.connect().prepareStatement(
-                    "SELECT IdPrestamo FROM Prestamos " +
-                            "WHERE IdUsuario = ? AND IdRecurso = ? AND Estado = 'Activo'"
-            );
-            ps.setInt(1, idUsuario);
-            ps.setInt(2, idRecurso);
-            rs = ps.executeQuery();
-
-            if (rs.next()) {
-                activo = true;
+    // Buscar por ID
+    public Prestamo buscarPorId(Long id) throws SQLException {
+        String sql = "SELECT * FROM prestamos WHERE id = ?";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setLong(1, id);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    return mapearPrestamo(resultSet);
+                }
             }
-            if (rs != null) { rs.close(); }
-            if (ps != null) { ps.close(); }
-        } catch (SQLException ex) {
-            throw new SQLException("Error al validar existencia de préstamo activo: " + ex.getMessage(), ex);
-        } finally {
-            if (rs != null) { try { rs.close(); } catch (SQLException e) {} }
-            if (ps != null) { try { ps.close(); } catch (SQLException e) {} }
-            rs = null;
-            ps = null;
-            conn.disconnect();
         }
-        return activo;
+        return null;
+    }
+
+    // Listar todos los registros
+    public List<Prestamo> listarTodos() throws SQLException {
+        List<Prestamo> prestamos = new ArrayList<>();
+        String sql = "SELECT * FROM prestamos";
+        try (PreparedStatement statement = connection.prepareStatement(sql);
+             ResultSet resultSet = statement.executeQuery()) {
+            while (resultSet.next()) {
+                prestamos.add(mapearPrestamo(resultSet));
+            }
+        }
+        return prestamos;
+    }
+
+    // Eliminar préstamo
+    public void eliminar(Long id) throws SQLException {
+        String sql = "DELETE FROM prestamos WHERE id = ?";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setLong(1, id);
+            statement.executeUpdate();
+        }
+    }
+
+    // Mapeador auxiliar interno
+    private Prestamo mapearPrestamo(ResultSet resultSet) throws SQLException {
+        Prestamo prestamo = new Prestamo();
+        prestamo.setId(resultSet.getLong("id"));
+        prestamo.setCliente(resultSet.getString("cliente"));
+        prestamo.setMonto(resultSet.getDouble("monto"));
+        prestamo.setFechaInicio(resultSet.getDate("fecha_inicio").toLocalDate());
+        prestamo.setActivo(resultSet.getBoolean("activo"));
+        return prestamo;
     }
 }
