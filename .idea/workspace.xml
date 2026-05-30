@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3bbf39d-08d7-486c-8c55-69e65b1b931f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/dominio/MovimientoInventario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/persistencia/MovimientoInventarioDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/esfe/persistencia/MovimientoInventarioDAOTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/esfe/persistencia/PrestamoDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/esfe/persistencia/PrestamoDAOTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +51,7 @@
     "JUnit.EstadosRecursosDAOTest.executor": "Run",
     "JUnit.EstadosRecursosDAOTest.insertar.executor": "Run",
     "JUnit.EstadosRecursosDAOTest.obtenerTodos.executor": "Run",
+    "JUnit.MovimientoInventarioDAOTest.executor": "Run",
     "JUnit.PrestamoDAOTest.executor": "Run",
     "JUnit.RecuperacionPasswordDAOTest.executor": "Run",
     "JUnit.RecursosDAOTest.executor": "Run",
@@ -90,7 +93,7 @@
       <recent name="esfe.persistencia" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DetallePrestamoDAOTest">
+  <component name="RunManager" selected="JUnit.MovimientoInventarioDAOTest">
     <configuration name="PrestamoDAOTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="esfe.persistencia.PrestamoDAOTest" />
       <module name="RecursosMateriales" />
@@ -119,6 +122,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MovimientoInventarioDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RecursosMateriales" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="esfe.persistencia.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="esfe.persistencia" />
+      <option name="MAIN_CLASS_NAME" value="esfe.persistencia.MovimientoInventarioDAOTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PrestamoDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RecursosMateriales" />
       <extension name="coverage">
@@ -129,21 +147,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="esfe.persistencia" />
       <option name="MAIN_CLASS_NAME" value="esfe.persistencia.PrestamoDAOTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RolDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RecursosMateriales" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="esfe.persistencia.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="esfe.persistencia" />
-      <option name="MAIN_CLASS_NAME" value="esfe.persistencia.RolDAOTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -177,13 +180,21 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MovimientoInventarioDAOTest" />
         <item itemvalue="JUnit.DetallePrestamoDAOTest" />
         <item itemvalue="JUnit.PrestamoDAOTest" />
         <item itemvalue="Application.PrestamoDAOTest" />
         <item itemvalue="JUnit.TipoConsumidorDAOTest" />
-        <item itemvalue="JUnit.RolDAOTest" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.24374.151" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.24374.151" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -197,6 +208,8 @@
       <workItem from="1780079508378" duration="9855000" />
       <workItem from="1780102512300" duration="3073000" />
       <workItem from="1780111892437" duration="1813000" />
+      <workItem from="1780117159473" duration="833000" />
+      <workItem from="1780118003886" duration="616000" />
     </task>
     <servers />
   </component>
