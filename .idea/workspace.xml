@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c5b10fe8-b7a0-460f-aae2-a8bbcc461807" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/esfe/persistencia/TipoConsumidorDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/esfe/persistencia/TipoConsumidorDAOTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/esfe/persistencia/CategoriaMaterialDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/esfe/persistencia/CategoriaMaterialDAOTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +54,7 @@
     "JUnit.RecursosDAOTest.guardar.executor": "Run",
     "JUnit.RecursosDAOTest.obtenerTodos.executor": "Run",
     "JUnit.RolDAOTest.guardar.executor": "Run",
+    "JUnit.TipoConsumidorDAOTest.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -204,7 +205,7 @@
       <workItem from="1780079508378" duration="20085000" />
       <workItem from="1780124132505" duration="1990000" />
       <workItem from="1780154771106" duration="18000" />
-      <workItem from="1780169893794" duration="927000" />
+      <workItem from="1780169893794" duration="1345000" />
     </task>
     <servers />
   </component>
