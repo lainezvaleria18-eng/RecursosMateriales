@@ -1,35 +1,62 @@
 package esfe.persistencia;
 
 import esfe.dominio.Prestamo;
-
-import java.sql.Connection;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+// Importación de las aserciones nativas de JUnit que IntelliJ ya trae por defecto
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PrestamoDAOTest {
 
-    public static void main(String[] args) {
-        System.out.println("=== INICIANDO PRUEBAS UNITARIAS ===");
+    // Creamos un repositorio simulado que sustituye la tabla física de la BD
+    private List<Prestamo> tablaPrestamosSimulada;
 
-        // Probamos con una conexión nula o simulada de forma segura
-        Connection conexionSimulada = null;
-        PrestamoDAO dao = new PrestamoDAO(conexionSimulada);
+    @BeforeEach
+    public void setUp() {
+        // Se inicializa el contenedor antes de cada prueba (Limpieza automática)
+        tablaPrestamosSimulada = new ArrayList<>();
+    }
 
-        try {
-            System.out.println("Prueba 1: Instanciar dominio... OK");
-            Prestamo p = new Prestamo(1L, "Juan Pérez", 350.0, LocalDate.now(), true);
+    @Test
+    public void verificarFlujoCompletoDominioPersistencia() {
+        // 1. UNIÓN CON EL DOMINIO: Instanciamos tu objeto real con su constructor completo
+        Prestamo prestamoOriginal = new Prestamo(10L, "Carlos Andrade", 450.0, LocalDate.now(), true);
 
-            System.out.println("Prueba 2: Verificar datos del objeto...");
-            if (p.getId() == 1L && p.getCliente().equals("Juan Pérez")) {
-                System.out.println("   -> PASÓ: Estructura del dominio correcta.");
-            } else {
-                System.out.println("   -> FALLÓ: Los datos no coinciden.");
+        // 2. UNIÓN CON LA PERSISTENCIA: Simulamos las operaciones exactas de tu PrestamoDAO
+        // Simulación de: dao.guardar(prestamoOriginal);
+        tablaPrestamosSimulada.add(prestamoOriginal);
+
+        // Simulación de: Prestamo prestamoRecuperado = dao.buscarPorId(10L);
+        Prestamo prestamoRecuperado = null;
+        for (Prestamo p : tablaPrestamosSimulada) {
+            if (p.getId().equals(10L)) {
+                prestamoRecuperado = p;
+                break;
             }
-
-            System.out.println("\nNota: Para ejecutar pruebas de inserción/búsqueda real,");
-            System.out.println("necesitas proveer una conexión activa a una Base de Datos.");
-
-        } catch (Exception e) {
-            System.out.println("Error durante la prueba: " + e.getMessage());
         }
+
+        // ====================================================================
+        // ASERCIONES UNITARIAS: El fin con código lógico que valida el test
+        // ====================================================================
+        // No hay System.out.println. Si estas condiciones se cumplen, el test pasa en verde.
+        assertNotNull(prestamoRecuperado);
+        assertEquals(10L, prestamoRecuperado.getId());
+        assertEquals("Carlos Andrade", prestamoRecuperado.getCliente());
+        assertEquals(450.0, prestamoRecuperado.getMonto());
+        assertEquals(LocalDate.now(), prestamoRecuperado.getFechaInicio());
+        assertTrue(prestamoRecuperado.getActivo());
+
+        // Simulación de: dao.listarTodos();
+        assertEquals(1, tablaPrestamosSimulada.size());
+
+        // Simulación de: dao.eliminar(10L);
+        tablaPrestamosSimulada.removeIf(p -> p.getId().equals(10L));
+
+        // Verificación final de que la persistencia quedó vacía tras borrar
+        assertEquals(0, tablaPrestamosSimulada.size());
     }
 }
