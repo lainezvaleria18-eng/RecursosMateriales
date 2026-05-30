@@ -42,45 +42,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.PrestamoDAOTest.executor": "Run",
-    "Application.RecursosDAOTest.executor": "Run",
-    "JUnit.EstadosRecursosDAOTest.executor": "Run",
-    "JUnit.EstadosRecursosDAOTest.insertar.executor": "Run",
-    "JUnit.EstadosRecursosDAOTest.obtenerTodos.executor": "Run",
-    "JUnit.MantenimientoDAOTest.executor": "Run",
-    "JUnit.MovimientoInventarioDAOTest.executor": "Run",
-    "JUnit.PrestamoDAOTest.executor": "Run",
-    "JUnit.RecuperacionPasswordDAOTest.executor": "Run",
-    "JUnit.RecursosDAOTest.executor": "Run",
-    "JUnit.RecursosDAOTest.guardar.executor": "Run",
-    "JUnit.RecursosDAOTest.obtenerTodos.executor": "Run",
-    "JUnit.RolDAOTest.executor": "Run",
-    "JUnit.TipoConsumidorDAOTest.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/MINEDUCYT/Downloads/recursos materiales",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.PrestamoDAOTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RecursosDAOTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EstadosRecursosDAOTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EstadosRecursosDAOTest.insertar.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EstadosRecursosDAOTest.obtenerTodos.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MantenimientoDAOTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MovimientoInventarioDAOTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PrestamoDAOTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RecuperacionPasswordDAOTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RecursosDAOTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RecursosDAOTest.guardar.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RecursosDAOTest.obtenerTodos.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RolDAOTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TipoConsumidorDAOTest.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/MINEDUCYT/Downloads/recursos materiales&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="esfe.persistencia" />
@@ -92,7 +92,7 @@
       <recent name="esfe.persistencia" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.NotificacionesDAOTest">
+  <component name="RunManager" selected="JUnit.DetallePrestamoDAOTest">
     <configuration name="DetallePrestamoDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RecursosMateriales" />
       <extension name="coverage">
@@ -181,11 +181,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DetallePrestamoDAOTest" />
+        <item itemvalue="JUnit.PrestamoDAOTest" />
         <item itemvalue="JUnit.NotificacionesDAOTest" />
         <item itemvalue="JUnit.MantenimientoDAOTest" />
         <item itemvalue="JUnit.MovimientoInventarioDAOTest" />
-        <item itemvalue="JUnit.DetallePrestamoDAOTest" />
-        <item itemvalue="JUnit.PrestamoDAOTest" />
       </list>
     </recent_temporary>
   </component>
