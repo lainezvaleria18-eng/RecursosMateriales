@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c5b10fe8-b7a0-460f-aae2-a8bbcc461807" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/esfe/persistencia/RolDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/esfe/persistencia/RolDAOTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/esfe/persistencia/TipoConsumidorDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/esfe/persistencia/TipoConsumidorDAOTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +53,7 @@
     "JUnit.RecursosDAOTest.executor": "Run",
     "JUnit.RecursosDAOTest.guardar.executor": "Run",
     "JUnit.RecursosDAOTest.obtenerTodos.executor": "Run",
+    "JUnit.RolDAOTest.guardar.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -87,7 +88,7 @@
       <recent name="esfe.persistencia" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RolDAOTest.guardar">
+  <component name="RunManager" selected="JUnit.TipoConsumidorDAOTest">
     <configuration name="EstadosRecursosDAOTest.insertar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RecursosMateriales" />
       <extension name="coverage">
@@ -98,21 +99,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="esfe.persistencia" />
       <option name="MAIN_CLASS_NAME" value="esfe.persistencia.DetallePrestamoDAOTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MovimientoInventarioDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RecursosMateriales" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="esfe.persistencia.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="esfe.persistencia" />
-      <option name="MAIN_CLASS_NAME" value="esfe.persistencia.MovimientoInventarioDAOTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -164,6 +150,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TipoConsumidorDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RecursosMateriales" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="esfe.persistencia.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="esfe.persistencia" />
+      <option name="MAIN_CLASS_NAME" value="esfe.persistencia.TipoConsumidorDAOTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="recursos materiales" />
       <method v="2">
@@ -177,6 +178,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TipoConsumidorDAOTest" />
         <item itemvalue="JUnit.RolDAOTest.guardar" />
         <item itemvalue="JUnit.EstadosRecursosDAOTest.insertar" />
       </list>
@@ -202,7 +204,7 @@
       <workItem from="1780079508378" duration="20085000" />
       <workItem from="1780124132505" duration="1990000" />
       <workItem from="1780154771106" duration="18000" />
-      <workItem from="1780169893794" duration="381000" />
+      <workItem from="1780169893794" duration="927000" />
     </task>
     <servers />
   </component>
