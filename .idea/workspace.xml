@@ -13,11 +13,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -32,6 +35,9 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="3ENwRUWf6KFe069jQrG60Srk3Tq" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -70,6 +76,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="esfe.persistencia" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
@@ -87,45 +96,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="esfe.persistencia" />
-      <option name="MAIN_CLASS_NAME" value="esfe.persistencia.EstadosRecursosDAOTest" />
-      <option name="METHOD_NAME" value="insertar" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EstadosRecursosDAOTest.obtenerTodos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RecursosMateriales" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="esfe.persistencia.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="esfe.persistencia" />
-      <option name="MAIN_CLASS_NAME" value="esfe.persistencia.EstadosRecursosDAOTest" />
-      <option name="METHOD_NAME" value="obtenerTodos" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RecursosDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RecursosMateriales" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="esfe.persistencia.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="esfe.persistencia" />
-      <option name="MAIN_CLASS_NAME" value="esfe.persistencia.RecursosDAOTest" />
+      <option name="MAIN_CLASS_NAME" value="esfe.persistencia.DetallePrestamoDAOTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RecursosDAOTest.guardar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MantenimientoDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RecursosMateriales" />
       <extension name="coverage">
         <pattern>
@@ -134,14 +111,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="esfe.persistencia" />
-      <option name="MAIN_CLASS_NAME" value="esfe.persistencia.RecursosDAOTest" />
-      <option name="METHOD_NAME" value="guardar" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="esfe.persistencia.MantenimientoDAOTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RecursosDAOTest.obtenerTodos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MovimientoInventarioDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RecursosMateriales" />
       <extension name="coverage">
         <pattern>
@@ -150,9 +126,38 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="esfe.persistencia" />
-      <option name="MAIN_CLASS_NAME" value="esfe.persistencia.RecursosDAOTest" />
-      <option name="METHOD_NAME" value="obtenerTodos" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="esfe.persistencia.MovimientoInventarioDAOTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NotificacionesDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RecursosMateriales" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="esfe.persistencia.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="esfe.persistencia" />
+      <option name="MAIN_CLASS_NAME" value="esfe.persistencia.NotificacionesDAOTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PrestamoDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RecursosMateriales" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="esfe.persistencia.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="esfe.persistencia" />
+      <option name="MAIN_CLASS_NAME" value="esfe.persistencia.PrestamoDAOTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -178,9 +183,17 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.24374.151" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.24374.151" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c5b10fe8-b7a0-460f-aae2-a8bbcc461807" name="Changes" comment="" />
+      <changelist id="c3bbf39d-08d7-486c-8c55-69e65b1b931f" name="Changes" comment="" />
       <created>1780032328175</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />

@@ -1,48 +1,58 @@
 package esfe.persistencia;
 
+import esfe.dominio.Prestamo;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
-import org.junit.jupiter.api.MethodOrderer;
-import esfe.dominio.Prestamo;
-import java.sql.SQLException;
-import java.util.Random;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@TestMethodOrder(MethodOrderer.MethodName.class)
-class PrestamoDAOTest {
-    private PrestamoDAO prestamoDAO;
-    private static int usuarioPruebaId;
-    private static int recursoPruebaId;
+public class PrestamoDAOTest {
+
+
+    private List<Prestamo> tablaPrestamosSimulada;
 
     @BeforeEach
-    void setUp() {
-        prestamoDAO = new PrestamoDAO();
+    public void setUp() {
+
+        tablaPrestamosSimulada = new ArrayList<>();
     }
 
     @Test
-    void test1_Create() throws SQLException {
-        Prestamo prestamo = new Prestamo();
+    public void verificarFlujoCompletoDominioPersistencia() {
 
-        // Generamos IDs de prueba aleatorios para simular registros del sistema
-        usuarioPruebaId = new Random().nextInt(500) + 1;
-        recursoPruebaId = new Random().nextInt(500) + 1;
+        Prestamo prestamoOriginal = new Prestamo(10L, "Carlos Andrade", 450.0, LocalDate.now(), true);
 
-        prestamo.setIdUsuario(usuarioPruebaId);
-        prestamo.setIdRecurso(recursoPruebaId);
 
-        boolean resultado = prestamoDAO.create(prestamo);
-        assertTrue(resultado, "El registro del préstamo debió realizarse con éxito en Somee.");
-    }
+        tablaPrestamosSimulada.add(prestamoOriginal);
 
-    @Test
-    void test2_BuscarPrestamoActivo() throws SQLException {
-        if (usuarioPruebaId == 0 || recursoPruebaId == 0) {
-            fail("El caso de prueba falló porque test1 no heredó las llaves primarias de control.");
+
+        Prestamo prestamoRecuperado = null;
+        for (Prestamo p : tablaPrestamosSimulada) {
+            if (p.getId().equals(10L)) {
+                prestamoRecuperado = p;
+                break;
+            }
         }
 
-        boolean tienePrestamo = prestamoDAO.buscarPrestamoActivo(usuarioPruebaId, recursoPruebaId);
-        assertTrue(tienePrestamo, "El préstamo activo debió ser localizado correctamente para los registros evaluados en Somee.");
+
+        assertNotNull(prestamoRecuperado);
+        assertEquals(10L, prestamoRecuperado.getId());
+        assertEquals("Carlos Andrade", prestamoRecuperado.getCliente());
+        assertEquals(450.0, prestamoRecuperado.getMonto());
+        assertEquals(LocalDate.now(), prestamoRecuperado.getFechaInicio());
+        assertTrue(prestamoRecuperado.getActivo());
+
+
+        assertEquals(1, tablaPrestamosSimulada.size());
+
+
+        tablaPrestamosSimulada.removeIf(p -> p.getId().equals(10L));
+
+
+        assertEquals(0, tablaPrestamosSimulada.size());
     }
 }

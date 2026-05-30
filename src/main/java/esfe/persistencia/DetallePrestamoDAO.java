@@ -1,72 +1,79 @@
 package esfe.persistencia;
 
+import esfe.dominio.DetallePrestamo; // Importación obligatoria del dominio
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import esfe.dominio.DetallePrestamo;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DetallePrestamoDAO {
-    private ConnectionManager conn;
-    private PreparedStatement ps;
-    private ResultSet rs;
+    private final Connection connection;
 
-    public DetallePrestamoDAO() {
-        conn = ConnectionManager.getInstance();
+    public DetallePrestamoDAO(Connection connection) {
+        this.connection = connection;
     }
 
-    public boolean create(DetallePrestamo dp) throws SQLException {
-        boolean res = false;
-        try {
-            ps = conn.connect().prepareStatement(
-                    "INSERT INTO DetallesPrestamos (IdPrestamo, IdConsumible, Cantidad, Observaciones) " +
-                            "VALUES (?, ?, ?, ?)"
-            );
-            ps.setInt(1, dp.getIdPrestamo());
-            ps.setInt(2, dp.getIdConsumible());
-            ps.setInt(3, dp.getCantidad());
-            ps.setString(4, dp.getObservaciones());
-
-            if (ps.executeUpdate() > 0) {
-                res = true;
-            }
-            if (ps != null) { ps.close(); }
-        } catch (SQLException ex) {
-            throw new SQLException("Error al registrar el detalle del préstamo: " + ex.getMessage(), ex);
-        } finally {
-            if (ps != null) {
-                try { ps.close(); } catch (SQLException e) {}
-            }
-            ps = null;
-            conn.disconnect();
+    // Guardar detalle de préstamo
+    public void guardar(DetallePrestamo detalle) throws SQLException {
+        String sql = "INSERT INTO detalles_prestamos (id, prestamo_id, numero_cuota, monto_cuota, pagado) VALUES (?, ?, ?, ?, ?)";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setLong(1, detalle.getId());
+            statement.setLong(2, detalle.getPrestamoId());
+            statement.setInt(3, detalle.getNumeroCuota());
+            statement.setDouble(4, detalle.getMontoCuota());
+            statement.setBoolean(5, detalle.getPagado());
+            statement.executeUpdate();
         }
-        return res;
     }
 
-    public boolean validarCantidadDetalle(int idPrestamo, int cantidadMinima) throws SQLException {
-        boolean valido = false;
-        try {
-            ps = conn.connect().prepareStatement(
-                    "SELECT IdDetallePrestamo FROM DetallesPrestamos " +
-                            "WHERE IdPrestamo = ? AND Cantidad >= ?"
-            );
-            ps.setInt(1, idPrestamo);
-            ps.setInt(2, cantidadMinima);
-            rs = ps.executeQuery();
-
-            if (rs.next()) {
-                valido = true;
+    // Buscar por ID
+    public DetallePrestamo buscarPorId(Long id) throws SQLException {
+        String sql = "SELECT * FROM detalles_prestamos WHERE id = ?";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setLong(1, id);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    return mapearDetalle(resultSet);
+                }
             }
-            if (rs != null) { rs.close(); }
-            if (ps != null) { ps.close(); }
-        } catch (SQLException ex) {
-            throw new SQLException("Error al validar la cantidad del detalle: " + ex.getMessage(), ex);
-        } finally {
-            if (rs != null) { try { rs.close(); } catch (SQLException e) {} }
-            if (ps != null) { try { ps.close(); } catch (SQLException e) {} }
-            rs = null;
-            ps = null;
-            conn.disconnect();
         }
-        return valido;
+        return null;
+    }
+
+    // Listar todos los detalles de un préstamo específico
+    public List<DetallePrestamo> listarPorPrestamo(Long prestamoId) throws SQLException {
+        List<DetallePrestamo> detalles = new ArrayList<>();
+        String sql = "SELECT * FROM detalles_prestamos WHERE prestamo_id = ?";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setLong(1, prestamoId);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    detalles.add(mapearDetalle(resultSet));
+                }
+            }
+        }
+        return detalles;
+    }
+
+    // Eliminar detalle
+    public void eliminar(Long id) throws SQLException {
+        String sql = "DELETE FROM detalles_prestamos WHERE id = ?";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setLong(1, id);
+            statement.executeUpdate();
+        }
+    }
+
+    // Helper interno para mapear ResultSet a Objeto
+    private DetallePrestamo mapearDetalle(ResultSet resultSet) throws SQLException {
+        DetallePrestamo detalle = new DetallePrestamo();
+        detalle.setId(resultSet.getLong("id"));
+        detalle.setPrestamoId(resultSet.getLong("prestamo_id"));
+        detalle.setNumeroCuota(resultSet.getInt("numero_cuota"));
+        detalle.setMontoCuota(resultSet.getDouble("monto_cuota"));
+        detalle.setPagado(resultSet.getBoolean("pagado"));
+        return detalle;
     }
 }
