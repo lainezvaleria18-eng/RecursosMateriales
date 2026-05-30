@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5b10fe8-b7a0-460f-aae2-a8bbcc461807" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/dominio/Recursos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/persistencia/RecursosDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/esfe/persistencia/RecursosDAOTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/esfe/persistencia/CategoriaMaterialDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/esfe/persistencia/CategoriaMaterialDAOTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/esfe/persistencia/RolDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/esfe/persistencia/RolDAOTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/esfe/persistencia/TipoConsumidorDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/esfe/persistencia/TipoConsumidorDAOTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +34,9 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="3ENwRUWf6KFe069jQrG60Srk3Tq" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -56,7 +59,7 @@
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "Daniela",
+    "git-widget-placeholder": "Kevin",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/MINEDUCYT/Downloads/recursos materiales",
     "node.js.detected.package.eslint": "true",
