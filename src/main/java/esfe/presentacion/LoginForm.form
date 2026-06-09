@@ -33,7 +33,7 @@
               <text value=""/>
             </properties>
           </component>
-          <component id="15dc2" class="javax.swing.JPasswordField" binding="passwordField1" default-binding="true">
+          <component id="15dc2" class="javax.swing.JPasswordField" binding="txtClave">
             <constraints>
               <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <minimum-size width="300" height="35"/>
