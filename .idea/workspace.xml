@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5b10fe8-b7a0-460f-aae2-a8bbcc461807" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/ChangePasswordForm.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/ChangePasswordForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/LoginForm.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/LoginForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/MainForm.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/MainForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/UserWriteForm.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/UserWriteForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/esfe/persistencia/CategoriaMaterialDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/esfe/persistencia/CategoriaMaterialDAOTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -45,6 +53,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.RecursosDAOTest.executor": "Run",
+    "JUnit.CategoriaMaterialDAOTest.executor": "Run",
     "JUnit.EstadosRecursosDAOTest.executor": "Run",
     "JUnit.EstadosRecursosDAOTest.insertar.executor": "Run",
     "JUnit.EstadosRecursosDAOTest.obtenerTodos.executor": "Run",
@@ -53,6 +62,7 @@
     "JUnit.RecursosDAOTest.executor": "Run",
     "JUnit.RecursosDAOTest.guardar.executor": "Run",
     "JUnit.RecursosDAOTest.obtenerTodos.executor": "Run",
+    "JUnit.RolDAOTest.executor": "Run",
     "JUnit.RolDAOTest.guardar.executor": "Run",
     "JUnit.TipoConsumidorDAOTest.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
@@ -60,6 +70,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
@@ -75,6 +86,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -89,7 +101,22 @@
       <recent name="esfe.persistencia" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TipoConsumidorDAOTest">
+  <component name="RunManager" selected="JUnit.CategoriaMaterialDAOTest">
+    <configuration name="CategoriaMaterialDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RecursosMateriales" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="esfe.persistencia.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="esfe.persistencia" />
+      <option name="MAIN_CLASS_NAME" value="esfe.persistencia.CategoriaMaterialDAOTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EstadosRecursosDAOTest.insertar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RecursosMateriales" />
       <extension name="coverage">
@@ -105,7 +132,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NotificacionesDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RolDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RecursosMateriales" />
       <extension name="coverage">
         <pattern>
@@ -114,22 +141,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="esfe.persistencia" />
-      <option name="MAIN_CLASS_NAME" value="esfe.persistencia.NotificacionesDAOTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PrestamoDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RecursosMateriales" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="esfe.persistencia.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="esfe.persistencia" />
-      <option name="MAIN_CLASS_NAME" value="esfe.persistencia.PrestamoDAOTest" />
+      <option name="MAIN_CLASS_NAME" value="esfe.persistencia.RolDAOTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -179,6 +191,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CategoriaMaterialDAOTest" />
+        <item itemvalue="JUnit.RolDAOTest" />
         <item itemvalue="JUnit.TipoConsumidorDAOTest" />
         <item itemvalue="JUnit.RolDAOTest.guardar" />
         <item itemvalue="JUnit.EstadosRecursosDAOTest.insertar" />
