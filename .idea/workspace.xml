@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5b10fe8-b7a0-460f-aae2-a8bbcc461807" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/ChangePasswordForm.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/ChangePasswordForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/PasswordSuccessForm.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/PasswordSuccessForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/VerifyCodeForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/VerifyCodeForm.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/VerifyCodeForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/VerifyCodeForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/UserWriteForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/UserWriteForm.form" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
