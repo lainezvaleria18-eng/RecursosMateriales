@@ -5,11 +5,11 @@ import javax.swing.*;
 public class UserWriteForm  extends JDialog {
     private JPanel mainpanel;
     private JPanel cardpanel;
-    private JTextField textUsuario;
-    private JTextField textcorreo;
     private JPasswordField txtclave;
-    private JPasswordField txtconfirmarclave;
+    private JTextField textCorreo;
+    private JTextField textUsuario;
+    private JPasswordField txtconfirmarcontraseña;
     private JButton btnRegistrar;
     private JButton yaTienesCuentaButton;
-    private JButton btnRegresarLogin;
+    private JButton iniciarSesionButton;
 }

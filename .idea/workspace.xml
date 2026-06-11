@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5b10fe8-b7a0-460f-aae2-a8bbcc461807" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/PasswordSuccessForm.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/PasswordSuccessForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/ChangePasswordForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/ChangePasswordForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/LoginForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/LoginForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/RecoverPasswordForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/RecoverPasswordForm.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/UserWriteForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/UserWriteForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/UserWriteForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/UserWriteForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/VerifyCodeForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/VerifyCodeForm.form" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +68,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "316",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "337",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
