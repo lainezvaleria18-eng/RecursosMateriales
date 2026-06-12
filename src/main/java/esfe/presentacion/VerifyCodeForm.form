@@ -140,7 +140,7 @@
                   <preferredSize width="28" height="45"/>
                 </properties>
               </component>
-              <component id="430e5" class="javax.swing.JPasswordField" binding="txtCod6">
+              <component id="28849" class="javax.swing.JTextField" binding="textCod6">
                 <constraints/>
                 <properties>
                   <background color="-4537390"/>
@@ -149,7 +149,9 @@
                   <horizontalAlignment value="0"/>
                   <maximumSize width="45" height="45"/>
                   <minimumSize width="45" height="45"/>
+                  <opaque value="true"/>
                   <preferredSize width="28" height="45"/>
+                  <text value=""/>
                 </properties>
               </component>
             </children>

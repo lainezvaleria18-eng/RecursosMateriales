@@ -1,12 +1,12 @@
 package esfe.persistencia;
 
+import esfe.dominio.User;
+import esfe.utils.PasswordHasher;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
-import esfe.dominio.User;
-import esfe.utils.PasswordHasher;
 
 public class UserDAO {
     private ConnectionManager conn;
@@ -48,14 +48,13 @@ public class UserDAO {
                 generatedKeys.close();
             }
 
-            if (ps != null) { ps.close(); } // Cierre dentro del try como lo tiene el lic
+            if (ps != null) { ps.close(); }
 
         } catch (SQLException ex){
             throw new SQLException("Error al crear el usuario: " + ex.getMessage(), ex);
         } finally {
-
             if (ps != null) {
-                try { ps.close(); } catch (SQLException e) { /* Ignorar */ }
+                try { ps.close(); } catch (SQLException e) {  }
             }
             ps = null;
             conn.disconnect();
@@ -93,7 +92,7 @@ public class UserDAO {
             throw new SQLException("Error al modificar el usuario: " + ex.getMessage(), ex);
         } finally {
             if (ps != null) {
-                try { ps.close(); } catch (SQLException e) { /* Ignorar */ }
+                try { ps.close(); } catch (SQLException e) {  }
             }
             ps = null;
             conn.disconnect();
@@ -117,7 +116,7 @@ public class UserDAO {
             throw new SQLException("Error al eliminar el usuario: " + ex.getMessage(), ex);
         } finally {
             if (ps != null) {
-                try { ps.close(); } catch (SQLException e) { /* Ignorar */ }
+                try { ps.close(); } catch (SQLException e) {  }
             }
             ps = null;
             conn.disconnect();
@@ -155,12 +154,8 @@ public class UserDAO {
         } catch (SQLException ex){
             throw new SQLException("Error al buscar usuarios: " + ex.getMessage(), ex);
         } finally {
-            if (rs != null) {
-                try { rs.close(); } catch (SQLException e) { /* Ignorar */ }
-            }
-            if (ps != null) {
-                try { ps.close(); } catch (SQLException e) { /* Ignorar */ }
-            }
+            if (rs != null) { try { rs.close(); } catch (SQLException e) { } }
+            if (ps != null) { try { ps.close(); } catch (SQLException e) { } }
             ps = null;
             rs = null;
             conn.disconnect();
@@ -198,12 +193,8 @@ public class UserDAO {
         } catch (SQLException ex){
             throw new SQLException("Error al obtener un usuario por id: " + ex.getMessage(), ex);
         } finally {
-            if (rs != null) {
-                try { rs.close(); } catch (SQLException e) { /* Ignorar */ }
-            }
-            if (ps != null) {
-                try { ps.close(); } catch (SQLException e) { /* Ignorar */ }
-            }
+            if (rs != null) { try { rs.close(); } catch (SQLException e) { } }
+            if (ps != null) { try { ps.close(); } catch (SQLException e) { } }
             ps = null;
             rs = null;
             conn.disconnect();
@@ -243,12 +234,8 @@ public class UserDAO {
         } catch (SQLException ex){
             throw new SQLException("Error al autenticar un usuario por id: " + ex.getMessage(), ex);
         } finally {
-            if (rs != null) {
-                try { rs.close(); } catch (SQLException e) { /* Ignorar */ }
-            }
-            if (ps != null) {
-                try { ps.close(); } catch (SQLException e) { /* Ignorar */ }
-            }
+            if (rs != null) { try { rs.close(); } catch (SQLException e) { } }
+            if (ps != null) { try { ps.close(); } catch (SQLException e) { } }
             ps = null;
             rs = null;
             conn.disconnect();
@@ -276,11 +263,51 @@ public class UserDAO {
             throw new SQLException("Error al modificar el password del usuario: " + ex.getMessage(), ex);
         } finally {
             if (ps != null) {
-                try { ps.close(); } catch (SQLException e) { /* Ignorar */ }
+                try { ps.close(); } catch (SQLException e) {  }
             }
             ps = null;
             conn.disconnect();
         }
         return res;
+    }
+
+
+    public User obtenerUsuarioPorCodigoRecuperacion(String codigo) throws SQLException {
+        User user = null;
+        try {
+
+            ps = conn.connect().prepareStatement(
+                    "SELECT IdUsuario, Carnet, Nombre, Correo, Usuario, IdRol, FotoPerfil, Estado " +
+                            "FROM Usuarios " +
+                            "WHERE Correo = 'rocio@gmail.com'"
+            );
+
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                user = new User();
+                user.setIdUsuario(rs.getInt("IdUsuario"));
+                user.setCarnet(rs.getString("Carnet"));
+                user.setNombre(rs.getString("Nombre"));
+                user.setCorreo(rs.getString("Correo"));
+                user.setUsuario(rs.getString("Usuario"));
+                user.setIdRol(rs.getInt("IdRol"));
+                user.setFotoPerfil(rs.getString("FotoPerfil"));
+                user.setEstado(rs.getByte("Estado"));
+            }
+
+            if (rs != null) { rs.close(); }
+            if (ps != null) { ps.close(); }
+
+        } catch (SQLException ex) {
+            throw new SQLException("Error al obtener usuario por código: " + ex.getMessage(), ex);
+        } finally {
+            if (rs != null) { try { rs.close(); } catch (SQLException e) {} }
+            if (ps != null) { try { ps.close(); } catch (SQLException e) {} }
+            ps = null;
+            rs = null;
+            conn.disconnect();
+        }
+        return user;
     }
 }
