@@ -3,11 +3,14 @@ package esfe.presentacion;
 import esfe.dominio.User;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class MainForm extends JFrame {
 
     // Usuario autenticado
     private User userAutenticado;
+
+    private JPanel panelPrincipal;
 
     public User getUserAutenticado() {
         return userAutenticado;
@@ -24,7 +27,14 @@ public class MainForm extends JFrame {
         setLocationRelativeTo(null);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
 
+        setLayout(new BorderLayout());
+
         crearMenu();
+
+        panelPrincipal = new JPanel();
+        panelPrincipal.setLayout(new BorderLayout());
+
+        add(panelPrincipal, BorderLayout.CENTER);
     }
 
     private void crearMenu() {
@@ -88,20 +98,28 @@ public class MainForm extends JFrame {
 
         menuBar.add(menuInventario);
 
-        JMenuItem itemRecursos =
-                new JMenuItem("Recursos");
+        // NUEVO: MOVIMIENTOS INVENTARIO
 
-        menuInventario.add(itemRecursos);
+        JMenuItem itemMovimientos =
+                new JMenuItem("Movimientos Inventario");
 
-        JMenuItem itemCategorias =
-                new JMenuItem("Categorías");
+        menuInventario.add(itemMovimientos);
 
-        menuInventario.add(itemCategorias);
 
-        JMenuItem itemTipos =
-                new JMenuItem("Tipos de Recursos");
+        itemMovimientos.addActionListener(e -> {
 
-        menuInventario.add(itemTipos);
+            panelPrincipal.removeAll();
+
+            MovimientoInventarioForm form =
+                    new MovimientoInventarioForm();
+
+            panelPrincipal.add(form, BorderLayout.CENTER);
+
+            panelPrincipal.revalidate();
+
+            panelPrincipal.repaint();
+
+        });
 
         //================== PRÉSTAMOS ==================
 
