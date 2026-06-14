@@ -41,6 +41,64 @@ public class RecursosDAO {
         }
     }
 
+    public boolean actualizar(Recursos recurso) {
+
+        String sql = "UPDATE Recursos SET " +
+                "NombreRecurso=?, " +
+                "Marca=?, " +
+                "Modelo=?, " +
+                "NumeroSerie=?, " +
+                "Ubicacion=?, " +
+                "Descripcion=?, " +
+                "IdEstadoRecurso=? " +
+                "WHERE CodigoRecurso=?";
+
+        try (Connection con = ConnectionManager.getInstance().connect();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setString(1, recurso.getNombreRecurso());
+            ps.setString(2, recurso.getMarca());
+            ps.setString(3, recurso.getModelo());
+            ps.setString(4, recurso.getNumeroSerie());
+            ps.setString(5, recurso.getUbicacion());
+            ps.setString(6, recurso.getDescripcion());
+            ps.setInt(7, recurso.getIdEstadoRecurso());
+            ps.setString(8, recurso.getCodigoRecurso());
+
+            int filasAfectadas = ps.executeUpdate();
+
+            return filasAfectadas > 0;
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+            return false;
+        }
+    }
+
+    public boolean eliminar(String codigo) {
+
+        String sql = "DELETE FROM Recursos WHERE CodigoRecurso=?";
+
+        try (Connection con = ConnectionManager.getInstance().connect();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setString(1, codigo);
+
+            int filasAfectadas = ps.executeUpdate();
+
+            return filasAfectadas > 0;
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+            return false;
+        }
+    }
+
+
 
     public List<Recursos> obtenerTodos() {
         List<Recursos> lista = new ArrayList<>();

@@ -173,27 +173,64 @@ public class MovimientoInventarioForm extends JPanel {
 
                     if(opcion == 0){
 
-                        JOptionPane.showMessageDialog(
-                                null,
-                                "Código: " + codigo +
-                                        "\nEquipo: " + nombre +
-                                        "\nEstado: " + estado +
-                                        "\nUbicación: " + ubicacion
-                        );
+                        DetallesEquipoForm detalles =
+                                new DetallesEquipoForm(
+                                        nombre,
+                                        codigo,
+                                        estado,
+                                        ubicacion
+                                );
+
+                        detalles.setVisible(true);
+
 
                     }else if(opcion == 1){
 
-                        JOptionPane.showMessageDialog(
-                                null,
-                                "Editar: " + nombre
+                        RegistrarEquipoForm editar =
+                                new RegistrarEquipoForm();
+
+                        editar.cargarDatosEditar(
+                                codigo,
+                                nombre,
+                                estado,
+                                ubicacion,
+                                fila
                         );
 
+                        editar.setVisible(true);
                     }else if(opcion == 2){
 
-                        JOptionPane.showMessageDialog(
+                        int confirmar = JOptionPane.showConfirmDialog(
                                 null,
-                                "Eliminar: " + nombre
+                                "¿Desea eliminar este equipo?",
+                                "Confirmar",
+                                JOptionPane.YES_NO_OPTION
                         );
+
+                        if(confirmar == JOptionPane.YES_OPTION){
+
+                            RecursosDAO dao = new RecursosDAO();
+
+                            boolean eliminado = dao.eliminar(codigo);
+
+                            if(eliminado){
+
+                                modelo.removeRow(fila);
+
+                                JOptionPane.showMessageDialog(
+                                        null,
+                                        "Equipo eliminado correctamente."
+                                );
+
+                            }else{
+
+                                JOptionPane.showMessageDialog(
+                                        null,
+                                        "No se pudo eliminar el equipo."
+                                );
+
+                            }
+                        }
 
                     }
                 }

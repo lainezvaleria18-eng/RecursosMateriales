@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5b10fe8-b7a0-460f-aae2-a8bbcc461807" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/DetallesEquipoForm.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/DetallesEquipoForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/MovimientoInventarioForm.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/MovimientoInventarioForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/RegistrarEquipoForm.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/RegistrarEquipoForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/MainForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/MainForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/persistencia/RecursosDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/persistencia/RecursosDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/DetallesEquipoForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/DetallesEquipoForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/MovimientoInventarioForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/MovimientoInventarioForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/RegistrarEquipoForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/RegistrarEquipoForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +221,7 @@
       <workItem from="1780124132505" duration="1990000" />
       <workItem from="1780154771106" duration="18000" />
       <workItem from="1780169893794" duration="1345000" />
-      <workItem from="1781284798705" duration="33013000" />
+      <workItem from="1781284798705" duration="42088000" />
     </task>
     <servers />
   </component>

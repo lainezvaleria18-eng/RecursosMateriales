@@ -7,6 +7,10 @@ import javax.swing.*;
 import java.math.BigDecimal;
 
 public class RegistrarEquipoForm extends JFrame {
+    private boolean editar = false;
+
+    private int filaEditar = -1;
+
     private JTextField textField1;
     private JTextField textField2;
     private JTextField textField3;
@@ -29,6 +33,8 @@ public class RegistrarEquipoForm extends JFrame {
         setSize(700, 500);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+
 
         // CATEGORÍA
 
@@ -55,10 +61,12 @@ public class RegistrarEquipoForm extends JFrame {
 
 // ESTADO
 
+        comboBox3.removeAllItems();
+
         comboBox3.addItem("Disponible");
-        comboBox3.addItem("En uso");
-        comboBox3.addItem("Mantenimiento");
         comboBox3.addItem("Prestado");
+        comboBox3.addItem("Agotado");
+        comboBox3.addItem("Mantenimiento");
 
 // MODELO
 
@@ -133,6 +141,10 @@ public class RegistrarEquipoForm extends JFrame {
                     recurso.setIdEstadoRecurso(2);
                     break;
 
+                case "Agotado":
+                    recurso.setIdEstadoRecurso(3);
+                    break;
+
                 case "Mantenimiento":
                     recurso.setIdEstadoRecurso(4);
                     break;
@@ -144,18 +156,57 @@ public class RegistrarEquipoForm extends JFrame {
             RecursosDAO dao =
                     new RecursosDAO();
 
-            boolean guardado =
-                    dao.guardar(recurso);
+            boolean guardado;
 
-            MovimientoInventarioForm.modelo.addRow(
-                    new Object[]{
-                            codigo,
-                            nombre,
-                            estado,
-                            ubicacion,
-                            "Detalles | Editar | Eliminar"
-                    }
-            );
+            if (editar) {
+
+                guardado = dao.actualizar(recurso);
+
+            } else {
+
+                guardado = dao.guardar(recurso);
+
+            }
+
+            if(editar){
+
+                MovimientoInventarioForm.modelo.setValueAt(
+                        codigo,
+                        filaEditar,
+                        0
+                );
+
+                MovimientoInventarioForm.modelo.setValueAt(
+                        nombre,
+                        filaEditar,
+                        1
+                );
+
+                MovimientoInventarioForm.modelo.setValueAt(
+                        estado,
+                        filaEditar,
+                        2
+                );
+
+                MovimientoInventarioForm.modelo.setValueAt(
+                        ubicacion,
+                        filaEditar,
+                        3
+                );
+
+            }else{
+
+                MovimientoInventarioForm.modelo.addRow(
+                        new Object[]{
+                                codigo,
+                                nombre,
+                                estado,
+                                ubicacion,
+                                "Detalles | Editar | Eliminar"
+                        }
+                );
+
+            }
 
             if(guardado){
 
@@ -176,5 +227,28 @@ public class RegistrarEquipoForm extends JFrame {
             dispose();
 
         });
+    }
+    public void cargarDatosEditar(
+            String codigo,
+            String nombre,
+            String estado,
+            String ubicacion,
+            int fila){
+
+        editar = true;
+
+        filaEditar = fila;
+
+        setTitle("Editar Equipo");
+
+        textField1.setText(codigo);
+        textField1.setEditable(false);
+
+        textField2.setText(nombre);
+
+        comboBox2.setSelectedItem(ubicacion);
+
+        comboBox3.setSelectedItem(estado);
+
     }
 }

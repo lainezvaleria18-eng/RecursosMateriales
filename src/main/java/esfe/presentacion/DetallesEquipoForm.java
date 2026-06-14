@@ -15,42 +15,42 @@ public class DetallesEquipoForm extends JFrame {
     private JButton salirButton;
     private JPanel panelPrincipal;
 
-    public DetallesEquipoForm() {
+    public DetallesEquipoForm(
+            String nombre,
+            String codigo,
+            String estado,
+            String ubicacion) {
 
         setTitle("Detalles del Equipo");
 
         setContentPane(panelPrincipal);
 
-        setSize(500,450);
+        setSize(500, 450);
 
         setLocationRelativeTo(null);
 
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        // Datos de ejemplo
+        lblNombre.setText("💻 " + nombre);
 
-        lblNombre.setText("💻 Laptop Dell Latitude 5520");
+        lblCodigo.setText("Código: " + codigo);
 
-        lblCodigo.setText("Código: LAP-001");
+        lblCategoria.setText("Categoría: Equipo IT");
 
-        lblCategoria.setText("Categoría: Laptop");
+        lblEstado.setText("Estado: " + estado);
 
-        lblEstado.setText("Estado: 🟢 Disponible");
+        lblUbicacion.setText("Ubicación: " + ubicacion);
 
-        lblUbicacion.setText("Ubicación: Bodega Central");
+        lblValor.setText("Valor: No especificado");
 
-        lblValor.setText("Valor: $850");
-
-        lblResponsable.setText("Responsable: Carlos Martínez");
+        lblResponsable.setText("Responsable: Sistema");
 
         txtObservaciones.setText(
-                "Equipo en buenas condiciones."
+                "Equipo registrado correctamente."
         );
 
         txtObservaciones.setEditable(false);
 
         salirButton.addActionListener(e -> dispose());
 
-    }
-
-}
+    }}
