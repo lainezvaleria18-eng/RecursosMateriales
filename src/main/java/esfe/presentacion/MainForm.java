@@ -3,14 +3,11 @@ package esfe.presentacion;
 import esfe.dominio.User;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class MainForm extends JFrame {
 
     // Usuario autenticado
     private User userAutenticado;
-
-    private JPanel panelPrincipal;
 
     public User getUserAutenticado() {
         return userAutenticado;
@@ -27,14 +24,7 @@ public class MainForm extends JFrame {
         setLocationRelativeTo(null);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
 
-        setLayout(new BorderLayout());
-
         crearMenu();
-
-        panelPrincipal = new JPanel();
-        panelPrincipal.setLayout(new BorderLayout());
-
-        add(panelPrincipal, BorderLayout.CENTER);
     }
 
     private void crearMenu() {
@@ -98,28 +88,20 @@ public class MainForm extends JFrame {
 
         menuBar.add(menuInventario);
 
-        // NUEVO: MOVIMIENTOS INVENTARIO
+        JMenuItem itemRecursos =
+                new JMenuItem("Recursos");
 
-        JMenuItem itemMovimientos =
-                new JMenuItem("Movimientos Inventario");
+        menuInventario.add(itemRecursos);
 
-        menuInventario.add(itemMovimientos);
+        JMenuItem itemCategorias =
+                new JMenuItem("Categorías");
 
+        menuInventario.add(itemCategorias);
 
-        itemMovimientos.addActionListener(e -> {
+        JMenuItem itemTipos =
+                new JMenuItem("Tipos de Recursos");
 
-            panelPrincipal.removeAll();
-
-            MovimientoInventarioForm form =
-                    new MovimientoInventarioForm();
-
-            panelPrincipal.add(form, BorderLayout.CENTER);
-
-            panelPrincipal.revalidate();
-
-            panelPrincipal.repaint();
-
-        });
+        menuInventario.add(itemTipos);
 
         //================== PRÉSTAMOS ==================
 
@@ -145,13 +127,30 @@ public class MainForm extends JFrame {
 
         menuUsuarios.add(itemAdministrarUsuarios);
 
-        // AÚN NO HAS CREADO ESTE FORMULARIO
+        // =========================================================================
+        // ÁREA MODIFICADA: LLAMADA SINCRONIZADA CON LA CLASE DE USUARIOS
+        // =========================================================================
         itemAdministrarUsuarios.addActionListener(e -> {
 
-            JOptionPane.showMessageDialog(
-                    this,
-                    "Módulo en desarrollo."
-            );
+            // 1. Instanciamos la vista limpia
+            GestionUsuariosVista vistaUsuarios = new GestionUsuariosVista();
+
+            // 2. Creamos la ventana flotante de forma segura referenciando la clase superior
+            JDialog ventanaFlotante = new JDialog(MainForm.this, "Administrar Usuarios", true);
+
+            // 3. Asignamos tu panel de diseño como contenido de la ventana
+            ventanaFlotante.setContentPane(vistaUsuarios.getMainPanel());
+
+            // 4. LÍNEA 145 CORREGIDA: Llamamos al nombre exacto del método sin argumentos
+            vistaUsuarios.inicializarTablaYComponentes();
+
+            // 5. Ajustes de tamaño ideales para la pantalla
+            ventanaFlotante.setSize(950, 600);
+            ventanaFlotante.setLocationRelativeTo(MainForm.this);
+            ventanaFlotante.setResizable(true);
+
+            // 6. Volvemos visible la ventana
+            ventanaFlotante.setVisible(true);
 
         });
 
@@ -163,5 +162,4 @@ public class MainForm extends JFrame {
         menuBar.add(menuNotificaciones);
 
     }
-
 }
