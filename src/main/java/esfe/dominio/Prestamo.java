@@ -1,76 +1,72 @@
 package esfe.dominio;
 
-import java.time.LocalDate;
-
 public class Prestamo {
-    private Long id;
-    private String cliente;
-    private Double monto;
-    private LocalDate fechaInicio;
-    private Boolean activo;
 
-    // Constructor vacío
+    private int idPrestamo;
+    private String fechaSolicitud;
+    private String fechaDevolucion;
+    private String estado;
+    private String observaciones;
+    private int idUsuario;
+    private int idTipoConsumidor;
+
     public Prestamo() {
     }
 
-    // Constructor completo
-    public Prestamo(Long id, String cliente, Double monto, LocalDate fechaInicio, Boolean activo) {
-        this.id = id;
-        this.cliente = cliente;
-        this.monto = monto;
-        this.fechaInicio = fechaInicio;
-        this.activo = activo;
+    public int getIdPrestamo() {
+        return idPrestamo;
     }
 
-    // Getters y Setters
-    public Long getId() {
-        return id;
+    public void setIdPrestamo(int idPrestamo) {
+        this.idPrestamo = idPrestamo;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public String getFechaSolicitud() {
+        return fechaSolicitud;
     }
 
-    public String getCliente() {
-        return cliente;
+    public void setFechaSolicitud(String fechaSolicitud) {
+        this.fechaSolicitud = fechaSolicitud;
     }
 
-    public void setCliente(String cliente) {
-        this.cliente = cliente;
+    public String getFechaDevolucion() {
+        return fechaDevolucion;
     }
 
-    public Double getMonto() {
-        return monto;
+    public void setFechaDevolucion(String fechaDevolucion) {
+        this.fechaDevolucion = fechaDevolucion;
     }
 
-    public void setMonto(Double monto) {
-        this.monto = monto;
+    public String getEstado() {
+        return estado;
     }
 
-    public LocalDate getFechaInicio() {
-        return fechaInicio;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
-    public void setFechaInicio(LocalDate fechaInicio) {
-        this.fechaInicio = fechaInicio;
+    public String getObservaciones() {
+        return observaciones;
     }
 
-    public Boolean getActivo() {
-        return activo;
+    public void setObservaciones(String observaciones) {
+        this.observaciones = observaciones;
     }
 
-    public void setActivo(Boolean activo) {
-        this.activo = activo;
+    public int getIdUsuario() {
+        return idUsuario;
     }
 
-    @Override
-    public String toString() {
-        return "Prestamo{" +
-                "id=" + id +
-                ", cliente='" + cliente + '\'' +
-                ", monto=" + monto +
-                ", fechaInicio=" + fechaInicio +
-                ", activo=" + activo +
-                '}';
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
+
+    public int getIdTipoConsumidor() {
+        return idTipoConsumidor;
+    }
+
+    public void setIdTipoConsumidor(int idTipoConsumidor) {
+        this.idTipoConsumidor = idTipoConsumidor;
+    }
+
 }

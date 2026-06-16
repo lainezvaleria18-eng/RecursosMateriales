@@ -9,6 +9,8 @@ public class MainForm extends JFrame {
     // Usuario autenticado
     private User userAutenticado;
 
+    private JPanel panelContenido;
+
     public User getUserAutenticado() {
         return userAutenticado;
     }
@@ -25,6 +27,11 @@ public class MainForm extends JFrame {
         setExtendedState(JFrame.MAXIMIZED_BOTH);
 
         crearMenu();
+        panelContenido = new JPanel();
+
+        panelContenido.setLayout(new java.awt.BorderLayout());
+
+        setContentPane(panelContenido);
     }
 
     private void crearMenu() {
@@ -88,20 +95,25 @@ public class MainForm extends JFrame {
 
         menuBar.add(menuInventario);
 
-        JMenuItem itemRecursos =
-                new JMenuItem("Recursos");
+        JMenuItem itemMovimientoInventario =
+                new JMenuItem("Movimiento de Inventario");
 
-        menuInventario.add(itemRecursos);
+        menuInventario.add(itemMovimientoInventario);
 
-        JMenuItem itemCategorias =
-                new JMenuItem("Categorías");
+        itemMovimientoInventario.addActionListener(e -> {
 
-        menuInventario.add(itemCategorias);
+            panelContenido.removeAll();
 
-        JMenuItem itemTipos =
-                new JMenuItem("Tipos de Recursos");
+            panelContenido.add(
+                    new MovimientoInventarioForm(),
+                    java.awt.BorderLayout.CENTER
+            );
 
-        menuInventario.add(itemTipos);
+            panelContenido.revalidate();
+
+            panelContenido.repaint();
+
+        });
 
         //================== PRÉSTAMOS ==================
 
@@ -114,6 +126,21 @@ public class MainForm extends JFrame {
                 new JMenuItem("Gestionar préstamos");
 
         menuPrestamos.add(itemGestionPrestamos);
+
+        itemGestionPrestamos.addActionListener(e -> {
+
+            panelContenido.removeAll();
+
+            panelContenido.add(
+                    new PrestamosForm(),
+                    java.awt.BorderLayout.CENTER
+            );
+
+            panelContenido.revalidate();
+
+            panelContenido.repaint();
+
+        });
 
         //================== USUARIOS ==================
 
