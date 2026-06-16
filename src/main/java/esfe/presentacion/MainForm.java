@@ -154,6 +154,7 @@ public class MainForm extends JFrame {
 
         menuUsuarios.add(itemAdministrarUsuarios);
 
+
         // =========================================================================
         // ÁREA MODIFICADA: LLAMADA SINCRONIZADA CON LA CLASE DE USUARIOS
         // =========================================================================
@@ -178,6 +179,18 @@ public class MainForm extends JFrame {
 
             // 6. Volvemos visible la ventana
             ventanaFlotante.setVisible(true);
+
+        });
+        JMenuItem itemRoles =
+                new JMenuItem("Gestión de Roles");
+
+        menuUsuarios.add(itemRoles);
+
+        itemRoles.addActionListener(e -> {
+
+            RolForm form = new RolForm(this);
+
+            form.setVisible(true);
 
         });
 

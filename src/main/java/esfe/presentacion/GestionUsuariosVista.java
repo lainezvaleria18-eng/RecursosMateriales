@@ -32,7 +32,7 @@ public class GestionUsuariosVista {
     // INICIALIZACIÓN PRINCIPAL (Segura y compatible con el .form)
     // =========================================================================
     public void inicializarTablaYComponentes() {
-        String[] columnas = {"Foto", "Carnet", "Nombre", "Rol", "Activo", "Acción"};
+        String[] columnas = {"Foto", "Carnet", "Nombre", "RolForm", "Activo", "Acción"};
 
         modelo = new DefaultTableModel(new Object[][]{}, columnas) {
             @Override
@@ -140,7 +140,7 @@ public class GestionUsuariosVista {
             y += 40;
         }
 
-        JLabel lblRol = new JLabel("Rol");
+        JLabel lblRol = new JLabel("RolForm");
         lblRol.setFont(new Font("Arial", Font.BOLD, 13));
         lblRol.setBounds(40, y, 50, 25);
         formPanel.add(lblRol);
@@ -221,8 +221,8 @@ public class GestionUsuariosVista {
         lblCarnetInfo.setBounds(40, 110, 200, 20);
         cajaBlanca.add(lblCarnetInfo);
 
-// Nuevo JLabel para el Rol del usuario
-        JLabel lblRolInfo = new JLabel("Rol: " + rol);
+// Nuevo JLabel para el RolForm del usuario
+        JLabel lblRolInfo = new JLabel("RolForm: " + rol);
         lblRolInfo.setFont(new Font("Arial", Font.PLAIN, 12));
         lblRolInfo.setBounds(40, 130, 200, 20); // Posicionado justo abajo de la línea de carnet
         cajaBlanca.add(lblRolInfo);
@@ -274,7 +274,7 @@ public class GestionUsuariosVista {
         JLabel lblN = new JLabel("Nombre:"); lblN.setBounds(40, 110, 100, 25); formPanel.add(lblN);
         JTextField txtN = new JTextField(); txtN.setBounds(150, 110, 220, 25); formPanel.add(txtN);
 
-        JLabel lblR = new JLabel("Rol:"); lblR.setBounds(40, 150, 100, 25); formPanel.add(lblR);
+        JLabel lblR = new JLabel("RolForm:"); lblR.setBounds(40, 150, 100, 25); formPanel.add(lblR);
         JComboBox<String> cbR = new JComboBox<>(new String[]{"Admin", "Usuario"});
         cbR.setBounds(150, 150, 120, 25); formPanel.add(cbR);
 
