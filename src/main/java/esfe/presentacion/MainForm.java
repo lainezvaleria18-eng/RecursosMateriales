@@ -154,33 +154,26 @@ public class MainForm extends JFrame {
 
         menuUsuarios.add(itemAdministrarUsuarios);
 
-
-        // =========================================================================
-        // ÁREA MODIFICADA: LLAMADA SINCRONIZADA CON LA CLASE DE USUARIOS
-        // =========================================================================
+        // Evento al dar clic en "Administrar usuarios"
         itemAdministrarUsuarios.addActionListener(e -> {
 
-            // 1. Instanciamos la vista limpia
+            // 1. Instanciamos tu clase de gestión de usuarios
             GestionUsuariosVista vistaUsuarios = new GestionUsuariosVista();
 
-            // 2. Creamos la ventana flotante de forma segura referenciando la clase superior
-            JDialog ventanaFlotante = new JDialog(MainForm.this, "Administrar Usuarios", true);
-
-            // 3. Asignamos tu panel de diseño como contenido de la ventana
-            ventanaFlotante.setContentPane(vistaUsuarios.getMainPanel());
-
-            // 4. LÍNEA 145 CORREGIDA: Llamamos al nombre exacto del método sin argumentos
+            // 2. Ejecutamos su método para armar la tabla y eventos
             vistaUsuarios.inicializarTablaYComponentes();
 
-            // 5. Ajustes de tamaño ideales para la pantalla
-            ventanaFlotante.setSize(950, 600);
-            ventanaFlotante.setLocationRelativeTo(MainForm.this);
-            ventanaFlotante.setResizable(true);
+            // 3. Limpiamos el contenedor del contenido blanco actual
+            panelContenido.removeAll();
 
-            // 6. Volvemos visible la ventana
-            ventanaFlotante.setVisible(true);
+            // 4. Añadimos el componente principal de la vista (el que tiene el .form)
+            panelContenido.add(vistaUsuarios.getMainPanel(), java.awt.BorderLayout.CENTER);
 
+            // 5. Le decimos a Java que vuelva a dibujar la pantalla con el nuevo contenido
+            panelContenido.revalidate();
+            panelContenido.repaint();
         });
+
         JMenuItem itemRoles =
                 new JMenuItem("Gestión de Roles");
 

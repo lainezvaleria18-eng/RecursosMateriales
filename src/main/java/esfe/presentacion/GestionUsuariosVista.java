@@ -7,7 +7,8 @@ import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableCellEditor;
 import java.awt.*;
 
-public class GestionUsuariosVista {
+public class GestionUsuariosVista extends JPanel {
+
 
     // === COMPONENTES VISUALES ENLAZADOS AL .FORM (NO SE MODIFICAN) ===
     private JPanel mainPanel;

@@ -5,10 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5b10fe8-b7a0-460f-aae2-a8bbcc461807" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/RolForm.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/RolForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/persistencia/RolDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/persistencia/RolDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/GestionUsuariosVista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/GestionUsuariosVista.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/MainForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/MainForm.java" afterDir="false" />
     </list>
