@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="esfe.presentacion.ResumendelSistema">
+  <grid id="27dc6" binding="panelPrincipal" layout-manager="GridLayoutManager" row-count="7" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="5" left="5" bottom="5" right="5"/>
+    <constraints>
+      <xy x="20" y="73" width="1087" height="511"/>
+    </constraints>
+    <properties>
+      <background color="-16120548"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <grid id="65fe" layout-manager="GridBagLayout">
+        <constraints>
+          <grid row="2" column="1" row-span="5" col-span="4" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <minimum-size width="50" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-591617"/>
+          <font size="9"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <hspacer id="5ffae">
+            <constraints>
+              <grid row="1" column="5" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+          </hspacer>
+          <component id="c85d0" class="javax.swing.JTextField" default-binding="true">
+            <constraints>
+              <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <background color="-16120548"/>
+              <font name="Arial Black" size="14" style="0"/>
+              <foreground color="-591617"/>
+              <text value="Estado"/>
+            </properties>
+          </component>
+          <component id="48798" class="javax.swing.JTextField" default-binding="true">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <background color="-9561046"/>
+              <font name="Arial Black" size="14" style="0"/>
+              <foreground color="-16382458"/>
+              <text value="Préstamos Recientes "/>
+            </properties>
+          </component>
+          <component id="ac324" class="javax.swing.JTextField" default-binding="true">
+            <constraints>
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <background color="-16120548"/>
+              <font name="Arial Black" size="14" style="0"/>
+              <foreground color="-591617"/>
+              <text value="ID de equipo"/>
+            </properties>
+          </component>
+          <component id="70705" class="javax.swing.JTextField" default-binding="true">
+            <constraints>
+              <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <background color="-16120548"/>
+              <font name="Arial Black" size="14" style="0"/>
+              <foreground color="-591617"/>
+              <text value="Solicitante"/>
+            </properties>
+          </component>
+          <component id="8ac07" class="javax.swing.JTextField" default-binding="true">
+            <constraints>
+              <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <background color="-16120548"/>
+              <font name="Arial Black" size="14" style="0"/>
+              <foreground color="-591617"/>
+              <text value="Fecha"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <component id="714a9" class="javax.swing.JTextField" default-binding="true">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-1708289"/>
+          <font name="Arial Black" size="18" style="0"/>
+          <foreground color="-15327891"/>
+          <text value="                                Resumen del Sistema"/>
+        </properties>
+      </component>
+      <component id="b7a26" class="javax.swing.JTextField" default-binding="true">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="1" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <font name="Arial Black" size="12" style="0"/>
+          <text value="Recursos Materiales Admin"/>
+        </properties>
+      </component>
+      <component id="44e87" class="javax.swing.JTextField" binding="lblEquiposTotales">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-591617"/>
+          <font name="Arial Black" size="12" style="0"/>
+          <foreground color="-14404499"/>
+          <text value="Equipos Totales  80"/>
+        </properties>
+      </component>
+      <component id="f5a74" class="javax.swing.JTextField" binding="lblDisponibles">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-591617"/>
+          <font name="Arial Black" size="14" style="0"/>
+          <foreground color="-14404499"/>
+          <text value="Disponibles 80 "/>
+        </properties>
+      </component>
+      <component id="58425" class="javax.swing.JTextField" binding="lblEnPrestamo">
+        <constraints>
+          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-591617"/>
+          <font name="Arial Black" size="14" style="0"/>
+          <foreground color="-14404499"/>
+          <text value="En préstamo 13"/>
+        </properties>
+      </component>
+      <component id="dba12" class="javax.swing.JTextField" binding="lblEnReparacion">
+        <constraints>
+          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-591617"/>
+          <font name="Arial Black" size="14" style="0"/>
+          <foreground color="-14404499"/>
+          <text value="En reparación 10"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

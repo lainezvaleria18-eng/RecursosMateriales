@@ -83,11 +83,20 @@ public class MainForm extends JFrame {
 
         //================== DASHBOARD ==================
 
-        JMenu menuDashboard =
-                new JMenu("Dashboard");
+        itemVerDashboard.addActionListener(e -> {
 
-        menuBar.add(menuDashboard);
+            panelContenido.removeAll();
 
+            ResumendelSistema formDashboard = new ResumendelSistema();
+
+            panelContenido.setLayout(new java.awt.BorderLayout());
+
+            panelContenido.add(formDashboard.getPanelPrincipal(),
+                    java.awt.BorderLayout.CENTER);
+
+            panelContenido.revalidate();
+            panelContenido.repaint();
+        });
         //================== INVENTARIO ==================
 
         JMenu menuInventario =
