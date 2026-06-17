@@ -91,6 +91,26 @@ public class MainForm extends JFrame {
 
         menuBar.add(menuDashboard);
 
+        JMenuItem itemResumen =
+                new JMenuItem("Resumen del Sistema");
+
+        menuDashboard.add(itemResumen);
+
+        itemResumen.addActionListener(e -> {
+
+            panelPrincipal.removeAll();
+
+            ResumendelSistema form =
+                    new ResumendelSistema();
+
+            panelPrincipal.add(form.getPanelPrincipal(), BorderLayout.CENTER);
+
+            panelPrincipal.revalidate();
+
+            panelPrincipal.repaint();
+
+        });
+
         //================== INVENTARIO ==================
 
         JMenu menuInventario =
@@ -133,6 +153,21 @@ public class MainForm extends JFrame {
 
         menuPrestamos.add(itemGestionPrestamos);
 
+        itemGestionPrestamos.addActionListener(e -> {
+
+            panelPrincipal.removeAll();
+
+            PrestamosForm form =
+                    new PrestamosForm();
+
+            panelPrincipal.add(form, BorderLayout.CENTER);
+
+            panelPrincipal.revalidate();
+
+            panelPrincipal.repaint();
+
+        });
+
         //================== USUARIOS ==================
 
         JMenu menuUsuarios =
@@ -148,10 +183,18 @@ public class MainForm extends JFrame {
         // AÚN NO HAS CREADO ESTE FORMULARIO
         itemAdministrarUsuarios.addActionListener(e -> {
 
-            JOptionPane.showMessageDialog(
-                    this,
-                    "Módulo en desarrollo."
-            );
+            panelPrincipal.removeAll();
+
+            GestionUsuariosVista form =
+                    new GestionUsuariosVista();
+
+            form.inicializarTablaYComponentes();
+
+            panelPrincipal.add(form.getMainPanel(), BorderLayout.CENTER);
+
+            panelPrincipal.revalidate();
+
+            panelPrincipal.repaint();
 
         });
 

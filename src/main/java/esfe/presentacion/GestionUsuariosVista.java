@@ -10,7 +10,7 @@ import java.awt.*;
 public class GestionUsuariosVista extends JPanel {
 
 
-    // === COMPONENTES VISUALES ENLAZADOS AL .FORM (NO SE MODIFICAN) ===
+    // === COMPONENTES VISUALES ENLAZADOS AL .FORM (NO SE 08MODIFICAN) ===
     private JPanel mainPanel;
     private JPanel cardpanel;
     private JButton agregarUsuarioButton;
