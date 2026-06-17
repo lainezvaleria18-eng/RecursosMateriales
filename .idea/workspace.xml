@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5b10fe8-b7a0-460f-aae2-a8bbcc461807" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/ResumendelSistema.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/ResumendelSistema.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/MainForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/MainForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/ResumendelSistema.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/ResumendelSistema.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/ResumendelSistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/ResumendelSistema.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +83,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/MINEDUCYT/Downloads/09000000/src/main/java/esfe/presentacion",
+    "last_opened_file_path": "C:/Users/MINEDUCYT/Downloads/prueba",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",

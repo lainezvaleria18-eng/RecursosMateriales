@@ -6,15 +6,19 @@ import javax.swing.table.DefaultTableModel;
 public class ResumendelSistema extends JPanel {
 
     private JPanel panelPrincipal;
-    private JTextField lblEquiposTotales;
-    private JTextField lblDisponibles;
-    private JTextField lblEnPrestamo;
-    private JTextField lblEnReparacion;
+    private JTextField JLabelEquiposTotales;
+    private JTextField JLabelDisponibles;
+    private JTextField JLabelEnPrestamo;
+    private JTextField JLabelEnReparacion;
     private JTable tblPrestamosRecientes;
 
     public ResumendelSistema() {
+
+        System.out.println("panelPrincipal = " + panelPrincipal);
+        System.out.println("tblPrestamosRecientes = " + tblPrestamosRecientes);
+
         cargarContadores();
-        cargarTablaPrestamos();
+
     }
 
     public JPanel getPanelPrincipal() {
@@ -28,15 +32,15 @@ public class ResumendelSistema extends JPanel {
             int reparacion = 10;
             int disponibles = totales - prestados - reparacion;
 
-            lblEquiposTotales.setText(String.valueOf(totales));
-            lblDisponibles.setText(String.valueOf(disponibles));
-            lblEnPrestamo.setText(String.valueOf(prestados));
-            lblEnReparacion.setText(String.valueOf(reparacion));
+            JLabelEquiposTotales.setText("Equipos Totales: " + totales);
+            JLabelDisponibles.setText("Disponibles: " + disponibles);
+            JLabelEnPrestamo.setText("En préstamo: " + prestados);
+            JLabelEnReparacion.setText("En reparación: " + reparacion);
 
-            lblEquiposTotales.setEditable(false);
-            lblDisponibles.setEditable(false);
-            lblEnPrestamo.setEditable(false);
-            lblEnReparacion.setEditable(false);
+            JLabelEquiposTotales.setEditable(false);
+            JLabelDisponibles.setEditable(false);
+            JLabelEnPrestamo.setEditable(false);
+            JLabelEnReparacion.setEditable(false);
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(

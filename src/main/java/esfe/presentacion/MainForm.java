@@ -83,6 +83,12 @@ public class MainForm extends JFrame {
 
         //================== DASHBOARD ==================
 
+        JMenu menuDashboard = new JMenu("Dashboard");
+        menuBar.add(menuDashboard);
+
+        JMenuItem itemVerDashboard = new JMenuItem("Ver Dashboard");
+        menuDashboard.add(itemVerDashboard);
+
         itemVerDashboard.addActionListener(e -> {
 
             panelContenido.removeAll();
@@ -91,8 +97,10 @@ public class MainForm extends JFrame {
 
             panelContenido.setLayout(new java.awt.BorderLayout());
 
-            panelContenido.add(formDashboard.getPanelPrincipal(),
-                    java.awt.BorderLayout.CENTER);
+            panelContenido.add(
+                    formDashboard.getPanelPrincipal(),
+                    java.awt.BorderLayout.CENTER
+            );
 
             panelContenido.revalidate();
             panelContenido.repaint();

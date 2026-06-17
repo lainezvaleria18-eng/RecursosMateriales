@@ -124,7 +124,7 @@
           <text value="Recursos Materiales Admin"/>
         </properties>
       </component>
-      <component id="44e87" class="javax.swing.JTextField" binding="lblEquiposTotales">
+      <component id="44e87" class="javax.swing.JTextField" binding="JLabelEquiposTotales">
         <constraints>
           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -137,7 +137,7 @@
           <text value="Equipos Totales  80"/>
         </properties>
       </component>
-      <component id="f5a74" class="javax.swing.JTextField" binding="lblDisponibles">
+      <component id="f5a74" class="javax.swing.JTextField" binding="JLabelDisponibles">
         <constraints>
           <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -150,7 +150,7 @@
           <text value="Disponibles 80 "/>
         </properties>
       </component>
-      <component id="58425" class="javax.swing.JTextField" binding="lblEnPrestamo">
+      <component id="58425" class="javax.swing.JTextField" binding="JLabelEnPrestamo">
         <constraints>
           <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -163,7 +163,7 @@
           <text value="En préstamo 13"/>
         </properties>
       </component>
-      <component id="dba12" class="javax.swing.JTextField" binding="lblEnReparacion">
+      <component id="dba12" class="javax.swing.JTextField" binding="JLabelEnReparacion">
         <constraints>
           <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
