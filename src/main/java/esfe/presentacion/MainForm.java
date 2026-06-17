@@ -3,13 +3,14 @@ package esfe.presentacion;
 import esfe.dominio.User;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class MainForm extends JFrame {
 
     // Usuario autenticado
     private User userAutenticado;
 
-    private JPanel panelContenido;
+    private JPanel panelPrincipal;
 
     public User getUserAutenticado() {
         return userAutenticado;
@@ -26,12 +27,14 @@ public class MainForm extends JFrame {
         setLocationRelativeTo(null);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
 
+        setLayout(new BorderLayout());
+
         crearMenu();
-        panelContenido = new JPanel();
 
-        panelContenido.setLayout(new java.awt.BorderLayout());
+        panelPrincipal = new JPanel();
+        panelPrincipal.setLayout(new BorderLayout());
 
-        setContentPane(panelContenido);
+        add(panelPrincipal, BorderLayout.CENTER);
     }
 
     private void crearMenu() {
@@ -83,28 +86,11 @@ public class MainForm extends JFrame {
 
         //================== DASHBOARD ==================
 
-        JMenu menuDashboard = new JMenu("Dashboard");
+        JMenu menuDashboard =
+                new JMenu("Dashboard");
+
         menuBar.add(menuDashboard);
 
-        JMenuItem itemVerDashboard = new JMenuItem("Ver Dashboard");
-        menuDashboard.add(itemVerDashboard);
-
-        itemVerDashboard.addActionListener(e -> {
-
-            panelContenido.removeAll();
-
-            ResumendelSistema formDashboard = new ResumendelSistema();
-
-            panelContenido.setLayout(new java.awt.BorderLayout());
-
-            panelContenido.add(
-                    formDashboard.getPanelPrincipal(),
-                    java.awt.BorderLayout.CENTER
-            );
-
-            panelContenido.revalidate();
-            panelContenido.repaint();
-        });
         //================== INVENTARIO ==================
 
         JMenu menuInventario =
@@ -112,23 +98,26 @@ public class MainForm extends JFrame {
 
         menuBar.add(menuInventario);
 
-        JMenuItem itemMovimientoInventario =
-                new JMenuItem("Movimiento de Inventario");
+        // NUEVO: MOVIMIENTOS INVENTARIO
 
-        menuInventario.add(itemMovimientoInventario);
+        JMenuItem itemMovimientos =
+                new JMenuItem("Movimientos Inventario");
 
-        itemMovimientoInventario.addActionListener(e -> {
+        menuInventario.add(itemMovimientos);
 
-            panelContenido.removeAll();
 
-            panelContenido.add(
-                    new MovimientoInventarioForm(),
-                    java.awt.BorderLayout.CENTER
-            );
+        itemMovimientos.addActionListener(e -> {
 
-            panelContenido.revalidate();
+            panelPrincipal.removeAll();
 
-            panelContenido.repaint();
+            MovimientoInventarioForm form =
+                    new MovimientoInventarioForm();
+
+            panelPrincipal.add(form, BorderLayout.CENTER);
+
+            panelPrincipal.revalidate();
+
+            panelPrincipal.repaint();
 
         });
 
@@ -144,21 +133,6 @@ public class MainForm extends JFrame {
 
         menuPrestamos.add(itemGestionPrestamos);
 
-        itemGestionPrestamos.addActionListener(e -> {
-
-            panelContenido.removeAll();
-
-            panelContenido.add(
-                    new PrestamosForm(),
-                    java.awt.BorderLayout.CENTER
-            );
-
-            panelContenido.revalidate();
-
-            panelContenido.repaint();
-
-        });
-
         //================== USUARIOS ==================
 
         JMenu menuUsuarios =
@@ -171,36 +145,13 @@ public class MainForm extends JFrame {
 
         menuUsuarios.add(itemAdministrarUsuarios);
 
-        // Evento al dar clic en "Administrar usuarios"
+        // AÚN NO HAS CREADO ESTE FORMULARIO
         itemAdministrarUsuarios.addActionListener(e -> {
 
-            // 1. Instanciamos tu clase de gestión de usuarios
-            GestionUsuariosVista vistaUsuarios = new GestionUsuariosVista();
-
-            // 2. Ejecutamos su método para armar la tabla y eventos
-            vistaUsuarios.inicializarTablaYComponentes();
-
-            // 3. Limpiamos el contenedor del contenido blanco actual
-            panelContenido.removeAll();
-
-            // 4. Añadimos el componente principal de la vista (el que tiene el .form)
-            panelContenido.add(vistaUsuarios.getMainPanel(), java.awt.BorderLayout.CENTER);
-
-            // 5. Le decimos a Java que vuelva a dibujar la pantalla con el nuevo contenido
-            panelContenido.revalidate();
-            panelContenido.repaint();
-        });
-
-        JMenuItem itemRoles =
-                new JMenuItem("Gestión de Roles");
-
-        menuUsuarios.add(itemRoles);
-
-        itemRoles.addActionListener(e -> {
-
-            RolForm form = new RolForm(this);
-
-            form.setVisible(true);
+            JOptionPane.showMessageDialog(
+                    this,
+                    "Módulo en desarrollo."
+            );
 
         });
 
@@ -210,6 +161,26 @@ public class MainForm extends JFrame {
                 new JMenu("Notificaciones");
 
         menuBar.add(menuNotificaciones);
+        JMenuItem itemVerNotificaciones =
+                new JMenuItem("Ver notificaciones");
+
+        menuNotificaciones.add(itemVerNotificaciones);
+
+        itemVerNotificaciones.addActionListener(e -> {
+
+            panelPrincipal.removeAll();
+
+            NotificacionesForm form =
+                    new NotificacionesForm();
+
+            panelPrincipal.add(form, BorderLayout.CENTER);
+
+            panelPrincipal.revalidate();
+
+            panelPrincipal.repaint();
+
+        });
 
     }
+
 }

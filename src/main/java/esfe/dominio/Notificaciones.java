@@ -2,11 +2,13 @@ package esfe.dominio;
 
 import java.util.Date;
 
+
 public class Notificaciones {
 
     private int idNotificacion;
     private String mensaje;
     private Date fecha;
+
     private boolean leida;
     private int idUsuario;
 

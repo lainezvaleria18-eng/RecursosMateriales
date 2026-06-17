@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5b10fe8-b7a0-460f-aae2-a8bbcc461807" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/NotificacionesForm.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/NotificacionesForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/dominio/Notificaciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/dominio/Notificaciones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/persistencia/NotificacionesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/persistencia/NotificacionesDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/MainForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/MainForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/ResumendelSistema.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/ResumendelSistema.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/ResumendelSistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/ResumendelSistema.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +78,7 @@
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE": "right",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "158",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE": "left",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "273",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "364",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
