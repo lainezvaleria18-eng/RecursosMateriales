@@ -6,8 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="c5b10fe8-b7a0-460f-aae2-a8bbcc461807" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/GestionUsuariosVista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/GestionUsuariosVista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/DetallesEquipoForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/DetallesEquipoForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/GestionUsuariosVista.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/GestionUsuariosVista.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/MainForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/MainForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/MovimientoInventarioForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/MovimientoInventarioForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/MovimientoInventarioForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/MovimientoInventarioForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/NotificacionesForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/NotificacionesForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/NotificacionesForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/NotificacionesForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/PrestamosForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/PrestamosForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/RegistrarEquipoForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/RegistrarEquipoForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/ResumendelSistema.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/ResumendelSistema.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/RistrarPrestamoForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/RistrarPrestamoForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/RolForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/RolForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/esfe/presentacion/RolForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/esfe/presentacion/RolForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

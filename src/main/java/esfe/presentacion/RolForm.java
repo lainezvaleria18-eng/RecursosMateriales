@@ -24,11 +24,19 @@ public class RolForm extends JDialog {
 
         rolDAO = new RolDAO();
 
+
+        Color azulCorporativo = new Color(0, 51, 102);
+
         mainpanel = new JPanel(new BorderLayout());
+        mainpanel.setBackground(azulCorporativo);
 
         JPanel panelSuperior = new JPanel(new FlowLayout());
+        panelSuperior.setBackground(azulCorporativo);
 
-        panelSuperior.add(new JLabel("Nombre del Rol:"));
+
+        JLabel lblNombreRol = new JLabel("Nombre del Rol:");
+        lblNombreRol.setForeground(Color.WHITE);
+        panelSuperior.add(lblNombreRol);
 
         txtNombreRol = new JTextField(20);
         panelSuperior.add(txtNombreRol);
@@ -48,7 +56,14 @@ public class RolForm extends JDialog {
 
         tblRoles = new JTable(modeloTabla);
 
+
+        tblRoles.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
+        tblRoles.setRowHeight(22);
+
         JScrollPane scrollPane = new JScrollPane(tblRoles);
+
+        scrollPane.getViewport().setBackground(azulCorporativo);
+        scrollPane.setBorder(BorderFactory.createLineBorder(azulCorporativo, 1));
 
         mainpanel.add(scrollPane, BorderLayout.CENTER);
 
@@ -134,6 +149,10 @@ public class RolForm extends JDialog {
     }
 
     private void createUIComponents() {
-        // TODO: place custom component creation code here
+
+    }
+
+    public JPanel getPanelPrincipal() {
+        return this.mainpanel;
     }
 }

@@ -8,35 +8,40 @@ public class NotificacionesForm extends JPanel {
     private JPanel panelLista;
     private JScrollPane panelNotificaciones;
     private JLabel contenerNotificaciones;
+    private JPanel Jpanel;
     private JPanel panelPrincipal;
     private JPanel panel1;
 
     public NotificacionesForm() {
 
         setLayout(new BorderLayout(10, 10));
-        setBackground(new Color(245, 245, 245));
 
-        //================ PANEL SUPERIOR ================
+
+        Color azulCorporativo = new Color(0, 51, 102);
+        setBackground(azulCorporativo);
+
+
 
         JPanel superior = new JPanel(new BorderLayout());
         superior.setOpaque(false);
 
         JLabel titulo = new JLabel("Notificaciones");
         titulo.setFont(new Font("Segoe UI", Font.BOLD, 26));
+        titulo.setForeground(Color.WHITE); // Texto Blanco para resaltar sobre el azul
 
         superior.add(titulo, BorderLayout.WEST);
 
         add(superior, BorderLayout.NORTH);
 
-        //================ PANEL CENTRAL ================
+
 
         panelLista = new JPanel();
         panelLista.setLayout(new BoxLayout(panelLista, BoxLayout.Y_AXIS));
-        panelLista.setBackground(new Color(245, 245, 245));
+        panelLista.setBackground(azulCorporativo);
 
         JScrollPane scrollPane = new JScrollPane(panelLista);
         scrollPane.setBorder(null);
-        scrollPane.getViewport().setBackground(new Color(245, 245, 245));
+        scrollPane.getViewport().setBackground(azulCorporativo);
 
         add(scrollPane, BorderLayout.CENTER);
 
@@ -57,7 +62,7 @@ public class NotificacionesForm extends JPanel {
 
             for (esfe.dominio.Notificaciones n : lista) {
 
-                //================ TARJETA =================
+
 
                 JPanel tarjeta = new JPanel(new BorderLayout(0, 5));
 
@@ -84,7 +89,7 @@ public class NotificacionesForm extends JPanel {
                         )
                 );
 
-                //================ CONTENIDO =================
+
 
                 JPanel contenido = new JPanel(
                         new BorderLayout(10, 0)
@@ -92,7 +97,7 @@ public class NotificacionesForm extends JPanel {
 
                 contenido.setOpaque(false);
 
-                // Círculo de estado
+
                 JLabel estado = new JLabel("●");
                 estado.setFont(
                         new Font("Arial", Font.BOLD, 18)
@@ -102,7 +107,7 @@ public class NotificacionesForm extends JPanel {
                         new Color(52, 152, 219)
                 );
 
-                // Mensaje
+
                 JLabel mensaje = new JLabel(
                         n.getMensaje()
                 );
@@ -121,7 +126,7 @@ public class NotificacionesForm extends JPanel {
                         BorderLayout.CENTER
                 );
 
-                // Fecha
+
                 String fechaTexto = "";
 
                 if (n.getFecha() != null) {
@@ -147,7 +152,7 @@ public class NotificacionesForm extends JPanel {
                         BorderLayout.SOUTH
                 );
 
-                //================ CENTRAR TARJETA =================
+
 
                 panelLista.add(
                         Box.createVerticalStrut(10)
@@ -178,6 +183,7 @@ public class NotificacionesForm extends JPanel {
             );
         }
     }
+
     private String tiempoRelativo(java.util.Date fecha) {
 
         if (fecha == null) {
@@ -188,5 +194,9 @@ public class NotificacionesForm extends JPanel {
                 new java.text.SimpleDateFormat("dd/MM/yyyy hh:mm a");
 
         return sdf.format(fecha);
+    }
+
+    private void createUIComponents() {
+
     }
 }

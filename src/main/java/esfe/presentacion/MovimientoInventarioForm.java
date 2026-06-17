@@ -11,7 +11,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
 
-
 public class MovimientoInventarioForm extends JPanel {
 
     private JComboBox cmbTipoMovimiento;
@@ -25,6 +24,7 @@ public class MovimientoInventarioForm extends JPanel {
     private JButton buscarButton;
     private JTextField textField1;
     private JTable table1;
+    private JPanel JPanel;
     private JScrollPane scrollPane;
 
     public static DefaultTableModel modelo;
@@ -33,15 +33,20 @@ public class MovimientoInventarioForm extends JPanel {
 
     public MovimientoInventarioForm() {
 
-
         setLayout(new BorderLayout(10,10));
 
-        //================ PANEL SUPERIOR ================
+
+        Color azulCorporativo = new Color(0, 51, 102);
+        setBackground(azulCorporativo);
+
+
 
         JPanel superior = new JPanel(new BorderLayout());
+        superior.setBackground(azulCorporativo); // 🌟 Fondo Azul
 
         JLabel titulo = new JLabel("Inventario de Recursos IT");
         titulo.setFont(new Font("Arial", Font.BOLD, 24));
+        titulo.setForeground(Color.WHITE);
 
         registrarEquipoButton = new JButton("Registrar Equipo");
 
@@ -59,18 +64,26 @@ public class MovimientoInventarioForm extends JPanel {
 
         add(superior, BorderLayout.NORTH);
 
-        //================ PANEL CENTRAL ================
+
 
         JPanel centro = new JPanel(new BorderLayout(10,10));
+        centro.setBackground(azulCorporativo);
 
         JLabel gestion = new JLabel("Gestión de activos informáticos");
         gestion.setFont(new Font("Arial", Font.BOLD, 16));
+        gestion.setForeground(Color.WHITE);
 
-        centro.add(gestion, BorderLayout.NORTH);
+
+        JPanel norteCentroPanel = new JPanel(new BorderLayout());
+        norteCentroPanel.setBackground(azulCorporativo);
+        norteCentroPanel.add(gestion, BorderLayout.NORTH);
 
         JPanel buscarPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        buscarPanel.setBackground(azulCorporativo);
 
-        buscarPanel.add(new JLabel("Buscar:"));
+        JLabel lblBuscar = new JLabel("Buscar:");
+        lblBuscar.setForeground(Color.WHITE);
+        buscarPanel.add(lblBuscar);
 
         textField1 = new JTextField(25);
 
@@ -110,9 +123,9 @@ public class MovimientoInventarioForm extends JPanel {
 
         });
 
-        centro.add(buscarPanel, BorderLayout.NORTH);
+        norteCentroPanel.add(buscarPanel, BorderLayout.CENTER);
+        centro.add(norteCentroPanel, BorderLayout.NORTH);
 
-        //================ TABLA ================
 
         String[] columnas = {
                 "Código",
@@ -125,7 +138,12 @@ public class MovimientoInventarioForm extends JPanel {
         modelo =
                 new DefaultTableModel(columnas, 0);
 
-        table1.setModel(modelo);
+
+        table1 = new JTable(modelo);
+
+
+        table1.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
+        table1.setRowHeight(22);
 
         sorter = new TableRowSorter<>(modelo);
 
@@ -239,12 +257,16 @@ public class MovimientoInventarioForm extends JPanel {
 
         scrollPane = new JScrollPane(table1);
 
+        scrollPane.getViewport().setBackground(azulCorporativo);
+        scrollPane.setBorder(BorderFactory.createLineBorder(azulCorporativo, 1));
+
         centro.add(scrollPane, BorderLayout.CENTER);
 
         add(centro, BorderLayout.CENTER);
 
         cargarRecursos();
     }
+
     private void cargarRecursos() {
 
         try {
