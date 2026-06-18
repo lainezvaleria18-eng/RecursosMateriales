@@ -29,4 +29,114 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+
+            <!-- Crear JAR con todas las dependencias -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.6.0</version>
+
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+
+                    <archive>
+                        <manifest>
+                            <!-- Clase principal -->
+                            <mainClass>esfe.Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Crear el archivo .exe -->
+            <plugin>
+                <groupId>com.akathist.maven.plugins.launch4j</groupId>
+                <artifactId>launch4j-maven-plugin</artifactId>
+                <version>2.5.0</version>
+
+                <executions>
+                    <execution>
+                        <id>l4j-clui</id>
+                        <phase>package</phase>
+
+                        <goals>
+                            <goal>launch4j</goal>
+                        </goals>
+
+                        <configuration>
+
+                            <headerType>gui</headerType>
+
+                            <jar>
+                                ${project.build.directory}/${project.artifactId}-${project.version}-jar-with-dependencies.jar
+                            </jar>
+
+                            <!-- Nombre del ejecutable -->
+                            <outfile>
+                                ${project.build.directory}/SistemaControlRecursosMateriales.exe
+                            </outfile>
+
+                            <dontWrapJar>false</dontWrapJar>
+
+                            <versionInfo>
+
+                                <fileVersion>1.0.0.0</fileVersion>
+                                <txtFileVersion>1.0.0.0</txtFileVersion>
+
+                                <fileDescription>
+                                    Sistema de Control de Recursos Materiales
+                                </fileDescription>
+
+                                <copyright>
+                                    Josue David Garay Araujo
+                                </copyright>
+
+                                <productVersion>1.0.0.0</productVersion>
+                                <txtProductVersion>1.0.0.0</txtProductVersion>
+
+                                <productName>
+                                    Sistema Control Recursos Materiales
+                                </productName>
+
+                                <companyName>
+                                    ESFE
+                                </companyName>
+
+                                <internalName>
+                                    SistemaControlRecursosMateriales
+                                </internalName>
+
+                                <originalFilename>
+                                    SistemaControlRecursosMateriales.exe
+                                </originalFilename>
+
+                            </versionInfo>
+
+                            <jre>
+                                <minVersion>21</minVersion>
+                            </jre>
+
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+
 </project>

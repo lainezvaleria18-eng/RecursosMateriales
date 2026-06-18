@@ -12,11 +12,13 @@ class RecursosDAOTest {
     void guardar() {
 
         Recursos nuevoRecurso = new Recursos();
-        nuevoRecurso.setCodigoRecurso("REQ-2026-011");
+        nuevoRecurso.setCodigoRecurso("REQ-" + System.currentTimeMillis());
         nuevoRecurso.setNombreRecurso("Laptop Dell Latitude");
         nuevoRecurso.setMarca("Dell");
         nuevoRecurso.setModelo("Latitude 3440");
-        nuevoRecurso.setNumeroSerie("DELL-987654");
+        nuevoRecurso.setNumeroSerie(
+                "DELL-" + System.currentTimeMillis()
+        );
         nuevoRecurso.setUbicacion("Laboratorio 3");
         nuevoRecurso.setUnidadMedida("Unidad");
         nuevoRecurso.setStock(10);
